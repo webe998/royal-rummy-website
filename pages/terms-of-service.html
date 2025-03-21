@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - DIGITAL DREAMS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Policy page specific styles */
+        .policy-hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #2a4374 100%);
+            color: var(--light-text);
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .policy-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../assets/images/card-pattern.webp');
+            background-size: 200px;
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        .policy-hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .policy-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+
+        .policy-section h2 {
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .policy-section h3 {
+            color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .policy-section p,
+        .policy-section ul,
+        .policy-section ol {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .policy-section ul,
+        .policy-section ol {
+            padding-left: 2rem;
+        }
+
+        .policy-section ul li,
+        .policy-section ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-section table th,
+        .policy-section table td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .policy-section table th {
+            background-color: var(--light-gray);
+            font-weight: 600;
+        }
+
+        .policy-date {
+            font-style: italic;
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+        }
+
+        .policy-toc {
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .policy-toc h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .policy-toc ul {
+            margin-bottom: 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-box {
+            background-color: rgba(247, 184, 1, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>DIGITAL DREAMS</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="policy-hero">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using our services.</p>
+        </div>
+    </section>
+
+    <div class="policy-content container">
+        <p class="policy-date">Last Updated: June 1, 2024</p>
+
+        <div class="policy-toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#agreement"><i class="fas fa-file-signature"></i> 1. Agreement to Terms</a></li>
+                <li><a href="#changes"><i class="fas fa-sync"></i> 2. Changes to Terms</a></li>
+                <li><a href="#access"><i class="fas fa-user-lock"></i> 3. Accessing the Services</a></li>
+                <li><a href="#accounts"><i class="fas fa-users"></i> 4. Account Registration</a></li>
+                <li><a href="#conduct"><i class="fas fa-user-shield"></i> 5. User Conduct</a></li>
+                <li><a href="#purchases"><i class="fas fa-shopping-cart"></i> 6. Purchases and Payments</a></li>
+                <li><a href="#intellectual-property"><i class="fas fa-copyright"></i> 7. Intellectual Property
+                        Rights</a></li>
+                <li><a href="#user-content"><i class="fas fa-upload"></i> 8. User-Generated Content</a></li>
+                <li><a href="#disclaimers"><i class="fas fa-exclamation-triangle"></i> 9. Disclaimers</a></li>
+                <li><a href="#liability"><i class="fas fa-gavel"></i> 10. Limitation of Liability</a></li>
+                <li><a href="#indemnification"><i class="fas fa-shield-alt"></i> 11. Indemnification</a></li>
+                <li><a href="#termination"><i class="fas fa-door-closed"></i> 12. Termination</a></li>
+                <li><a href="#governing-law"><i class="fas fa-balance-scale"></i> 13. Governing Law</a></li>
+                <li><a href="#dispute"><i class="fas fa-handshake"></i> 14. Dispute Resolution</a></li>
+                <li><a href="#misc"><i class="fas fa-ellipsis-h"></i> 15. Miscellaneous</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> 16. Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>IMPORTANT NOTICE:</strong> These Terms of Service contain an arbitration agreement, class action
+                waiver, and other provisions that limit your legal rights, including your right to file a lawsuit in
+                court.</p>
+        </div>
+
+        <div id="agreement" class="policy-section">
+            <h2><i class="fas fa-file-signature"></i> 1. Agreement to Terms</h2>
+            <p>These Terms of Service ("Terms") constitute a legally binding agreement made between you and DIGITAL
+                DREAMS ("we," "us," or "our") governing your access to and use of our website, mobile applications,
+                games, and other services (collectively, the "Services").</p>
+            <p>By accessing or using our Services, you agree to be bound by these Terms. If you do not agree to these
+                Terms, you must not access or use the Services.</p>
+            <p>You acknowledge that these Terms are supported by reasonable and valuable consideration, the receipt and
+                adequacy of which are hereby acknowledged. Without limiting the generality of the foregoing, you
+                acknowledge that such consideration includes your use of the Services and the promise to provide
+                services to you.</p>
+        </div>
+
+        <div id="changes" class="policy-section">
+            <h2><i class="fas fa-sync"></i> 2. Changes to Terms</h2>
+            <p>We reserve the right to modify or revise these Terms at any time in our sole discretion. All changes are
+                effective immediately when we post them and apply to all access to and use of the Services thereafter.
+            </p>
+            <p>Your continued use of the Services following the posting of revised Terms means that you accept and agree
+                to the changes. You are expected to check this page frequently so you are aware of any changes, as they
+                are binding on you.</p>
+        </div>
+
+        <div id="access" class="policy-section">
+            <h2><i class="fas fa-user-lock"></i> 3. Accessing the Services</h2>
+            <h3>3.1 Eligibility</h3>
+            <p>The Services are intended solely for users who are 13 years of age or older. By accessing or using the
+                Services, you represent and warrant that you are at least 13 years old. If you are under the age of 18,
+                you represent that you have your parent or guardian's permission to access and use the Services, and
+                that you have read and understand these Terms.</p>
+
+            <h3>3.2 Access and Security</h3>
+            <p>We reserve the right to withdraw or modify the Services, and any feature or material we provide through
+                the Services, in our sole discretion without notice. We will not be liable if, for any reason, all or
+                any part of the Services are unavailable at any time or for any period. From time to time, we may
+                restrict access to some parts of the Services, or the entire Services, to users.</p>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Making all arrangements necessary for you to have access to the Services.</li>
+                <li>Ensuring that all persons who access the Services through your internet connection are aware of
+                    these Terms and comply with them.</li>
+                <li>Ensuring that your device meets the minimum technical requirements to access and properly run the
+                    Services.</li>
+            </ul>
+        </div>
+
+        <div id="accounts" class="policy-section">
+            <h2><i class="fas fa-users"></i> 4. Account Registration</h2>
+            <h3>4.1 Account Creation</h3>
+            <p>In order to access certain features of the Services, you may be required to register for an account. When
+                you register, you agree to provide accurate, current, and complete information and to update this
+                information to maintain its accuracy.</p>
+
+            <h3>4.2 Account Security</h3>
+            <p>You are responsible for maintaining the confidentiality of your account credentials and for all
+                activities that occur under your account. You agree to:</p>
+            <ul>
+                <li>Notify us immediately of any unauthorized access to or use of your account.</li>
+                <li>Ensure that you exit your account at the end of each session when accessing the Services on a shared
+                    device.</li>
+                <li>Not share your account credentials with any third party.</li>
+            </ul>
+            <p>We have the right to disable any user account at any time in our sole discretion, including if, in our
+                opinion, you have violated any provision of these Terms.</p>
+
+            <h3>4.3 Account Termination</h3>
+            <p>You may terminate your account at any time by following the instructions on our website or contacting us.
+                Upon termination, you will lose access to any virtual items, game progress, or other content associated
+                with your account, and we may retain certain information as required by law or for legitimate business
+                purposes.</p>
+        </div>
+
+        <div id="conduct" class="policy-section">
+            <h2><i class="fas fa-user-shield"></i> 5. User Conduct</h2>
+            <p>While using the Services, you agree not to:</p>
+            <ul>
+                <li>Use the Services for any purpose that is illegal, beyond the scope of their intended use, or
+                    otherwise prohibited in these Terms.</li>
+                <li>Use the Services in any manner that could disable, overburden, damage, or impair the Services or
+                    interfere with any other party's use of the Services.</li>
+                <li>Use any robot, spider, or other automatic device, process, or means to access the Services for any
+                    purpose, including monitoring or copying any of the material on the Services.</li>
+                <li>Introduce any viruses, Trojan horses, worms, logic bombs, or other harmful material to the Services.
+                </li>
+                <li>Attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the
+                    Services, the server on which the Services are stored, or any server, computer, or database
+                    connected to the Services.</li>
+                <li>Attack the Services via a denial-of-service attack or a distributed denial-of-service attack.</li>
+                <li>Harass, abuse, or harm another person, including our employees and representatives.</li>
+                <li>Impersonate or attempt to impersonate us, our employees, another user, or any other person or
+                    entity.</li>
+                <li>Engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services, or
+                    which, as determined by us, may harm us or users of the Services or expose them to liability.</li>
+            </ul>
+        </div>
+
+        <div id="purchases" class="policy-section">
+            <h2><i class="fas fa-shopping-cart"></i> 6. Purchases and Payments</h2>
+            <h3>6.1 In-App Purchases</h3>
+            <p>The Services may allow you to purchase virtual currency, items, or subscriptions ("Virtual Items").
+                Virtual Items are licensed, not sold, to you. You only receive a limited, non-transferable,
+                non-sublicensable, revocable license to use Virtual Items in connection with the Services.</p>
+            <p>You acknowledge that Virtual Items have no monetary value and cannot be redeemed for cash or any other
+                tangible item. We reserve the right to modify, manage, control, and/or eliminate Virtual Items at our
+                sole discretion.</p>
+
+            <h3>6.2 Payment Terms</h3>
+            <p>All purchases are final and non-refundable, except as required by applicable law. By making a purchase,
+                you authorize us (or our third-party payment processor) to charge the payment method you provide.</p>
+            <p>You agree to pay all charges at the prices in effect when you incur the charges. You also agree to pay
+                any applicable taxes and other charges incurred in connection with your purchase.</p>
+
+            <h3>6.3 Subscriptions</h3>
+            <p>If you purchase a subscription, it will automatically renew at the end of the applicable subscription
+                period unless you cancel it before the end of the current subscription period.</p>
+            <p>For more information about our refund policies, please see our <a href="refund-policy.html">Refund
+                    Policy</a>.</p>
+        </div>
+
+        <div id="intellectual-property" class="policy-section">
+            <h2><i class="fas fa-copyright"></i> 7. Intellectual Property Rights</h2>
+            <p>The Services and their entire contents, features, and functionality (including but not limited to all
+                information, software, text, displays, images, video, and audio, and the design, selection, and
+                arrangement thereof) are owned by us, our licensors, or other providers of such material and are
+                protected by United States and international copyright, trademark, patent, trade secret, and other
+                intellectual property or proprietary rights laws.</p>
+            <p>These Terms permit you to use the Services for your personal, non-commercial use only. You must not
+                reproduce, distribute, modify, create derivative works of, publicly display, publicly perform,
+                republish, download, store, or transmit any of the material on our Services, except as follows:</p>
+            <ul>
+                <li>Your computer may temporarily store copies of such materials in RAM incidental to your accessing and
+                    viewing those materials.</li>
+                <li>You may store files that are automatically cached by your Web browser for display enhancement
+                    purposes.</li>
+                <li>You may print or download one copy of a reasonable number of pages of the website for your own
+                    personal, non-commercial use and not for further reproduction, publication, or distribution.</li>
+            </ul>
+            <p>You must not:</p>
+            <ul>
+                <li>Modify copies of any materials from the Services.</li>
+                <li>Delete or alter any copyright, trademark, or other proprietary rights notices from copies of
+                    materials from the Services.</li>
+                <li>Access or use for any commercial purpose any part of the Services.</li>
+            </ul>
+        </div>
+
+        <div id="user-content" class="policy-section">
+            <h2><i class="fas fa-upload"></i> 8. User-Generated Content</h2>
+            <p>The Services may allow you to post, submit, publish, display, or transmit content such as reviews,
+                comments, suggestions, or personal information (collectively, "User Content").</p>
+            <p>By submitting User Content, you grant us a perpetual, irrevocable, worldwide, royalty-free, and
+                non-exclusive license to use, reproduce, modify, adapt, publish, translate, create derivative works
+                from, distribute, and display such User Content in any media.</p>
+            <p>You represent and warrant that:</p>
+            <ul>
+                <li>You own or control all rights in and to your User Content and have the right to grant the license
+                    granted above.</li>
+                <li>All of your User Content does and will comply with these Terms.</li>
+                <li>Your User Content does not violate the rights of any third party, including intellectual property
+                    rights and privacy rights.</li>
+            </ul>
+            <p>We have the right to remove or refuse any User Content at our sole discretion.</p>
+        </div>
+
+        <div id="disclaimers" class="policy-section">
+            <h2><i class="fas fa-exclamation-triangle"></i> 9. Disclaimers</h2>
+            <p>THE SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND,
+                EITHER EXPRESS OR IMPLIED. NEITHER DIGITAL DREAMS NOR ANY PERSON ASSOCIATED WITH DIGITAL DREAMS MAKES
+                ANY WARRANTY OR REPRESENTATION WITH RESPECT TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY,
+                ACCURACY, OR AVAILABILITY OF THE SERVICES.</p>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER
+                EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+                MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR PARTICULAR PURPOSE.</p>
+        </div>
+
+        <div id="liability" class="policy-section">
+            <h2><i class="fas fa-gavel"></i> 10. Limitation of Liability</h2>
+            <p>TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO EVENT WILL DIGITAL DREAMS, ITS AFFILIATES, OR THEIR
+                LICENSORS, SERVICE PROVIDERS, EMPLOYEES, AGENTS, OFFICERS, OR DIRECTORS BE LIABLE FOR DAMAGES OF ANY
+                KIND, UNDER ANY LEGAL THEORY, ARISING OUT OF OR IN CONNECTION WITH YOUR USE, OR INABILITY TO USE, THE
+                SERVICES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.</p>
+        </div>
+
+        <div id="indemnification" class="policy-section">
+            <h2><i class="fas fa-shield-alt"></i> 11. Indemnification</h2>
+            <p>You agree to defend, indemnify, and hold harmless DIGITAL DREAMS, its affiliates, licensors, and service
+                providers, and its and their respective officers, directors, employees, contractors, agents, licensors,
+                suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards,
+                losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to
+                your violation of these Terms or your use of the Services.</p>
+        </div>
+
+        <div id="termination" class="policy-section">
+            <h2><i class="fas fa-door-closed"></i> 12. Termination</h2>
+            <p>We may terminate or suspend your access to all or part of the Services, including your account, without
+                notice, for any conduct that we, in our sole discretion, believe violates these Terms or is harmful to
+                other users of the Services, us, or third parties, or for any other reason.</p>
+            <p>Upon termination, your right to use the Services will immediately cease. All provisions of these Terms
+                which by their nature should survive termination shall survive, including, without limitation, ownership
+                provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+        </div>
+
+        <div id="governing-law" class="policy-section">
+            <h2><i class="fas fa-balance-scale"></i> 13. Governing Law</h2>
+            <p>These Terms and any dispute or claim arising out of or related to them, their subject matter, or their
+                formation (including non-contractual disputes or claims) shall be governed by and construed in
+                accordance with the laws of the State of California, without giving effect to any choice or conflict of
+                law provision or rule.</p>
+        </div>
+
+        <div id="dispute" class="policy-section">
+            <h2><i class="fas fa-handshake"></i> 14. Dispute Resolution</h2>
+            <h3>14.1 Mandatory Arbitration</h3>
+            <p>Any dispute, controversy, or claim arising out of or relating to these Terms, or the breach, termination,
+                or validity thereof, shall be resolved by binding arbitration in accordance with the rules of the
+                American Arbitration Association then in effect.</p>
+
+            <h3>14.2 Class Action Waiver</h3>
+            <p>YOU AND DIGITAL DREAMS AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL
+                CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</p>
+
+            <h3>14.3 Small Claims Court</h3>
+            <p>Notwithstanding the foregoing, you may bring an individual action in the small claims court of your state
+                or municipality if the action is within that court's jurisdiction and is pending only in that court.</p>
+        </div>
+
+        <div id="misc" class="policy-section">
+            <h2><i class="fas fa-ellipsis-h"></i> 15. Miscellaneous</h2>
+            <h3>15.1 Entire Agreement</h3>
+            <p>These Terms constitute the sole and entire agreement between you and DIGITAL DREAMS regarding the
+                Services and supersede all prior and contemporaneous understandings, agreements, representations, and
+                warranties.</p>
+
+            <h3>15.2 Waiver</h3>
+            <p>No waiver by us of any term or condition set out in these Terms shall be deemed a further or continuing
+                waiver of such term or condition or a waiver of any other term or condition.</p>
+
+            <h3>15.3 Severability</h3>
+            <p>If any provision of these Terms is held to be invalid, illegal, or unenforceable, such provision shall be
+                modified to the minimum extent necessary to make it valid, legal, and enforceable, and the remaining
+                provisions will continue in full force and effect.</p>
+        </div>
+
+        <div id="contact" class="policy-section">
+            <h2><i class="fas fa-envelope"></i> 16. Contact Us</h2>
+            <p>If you have any questions about these Terms or our Services, please contact us at:</p>
+            <p>
+                DIGITAL DREAMS<br>
+                123 Innovation Plaza, Suite 500<br>
+                San Francisco, CA 94105, USA<br>
+                Email: legal@digitaldreams.com<br>
+                Phone: +1 (415) 555-7890
+            </p>
+        </div>
+    </div>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>DIGITAL DREAMS</h2>
+                    <p>The Premier Card Game Studio</p>
+                    <div class="company-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Plaza, Suite 500</p>
+                        <p>San Francisco, CA 94105, USA</p>
+                        <p><i class="fas fa-phone"></i> +1 (415) 555-7890</p>
+                        <p><i class="fas fa-envelope"></i> info@digitaldreams.com</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="games.html">Games</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="refund-policy.html">Refund Policy</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DIGITAL DREAMS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>

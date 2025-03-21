@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DIGITAL DREAMS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Contact page specific styles */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../assets/images/card-pattern.webp');
+            background-size: 200px;
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        .contact-hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-content {
+            padding: 5rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h2 {
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .contact-method i {
+            font-size: 1.6rem;
+            color: var(--accent-color);
+            margin-right: 1.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .contact-method-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method-content p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .contact-form h2 {
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(247, 184, 1, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .form-button:hover {
+            background-color: #e4a901;
+            transform: translateY(-3px);
+        }
+
+        .map-section {
+            padding: 2rem 0 5rem;
+        }
+
+        .map-section h2 {
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .faq-section {
+            background-color: var(--light-gray);
+            padding: 5rem 0;
+        }
+
+        .faq-section h2 {
+            color: var(--dark-color);
+            margin-bottom: 3rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-item h3 i {
+            color: var(--accent-color);
+            margin-right: 0.75rem;
+        }
+
+        .faq-item p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .social-contact {
+            margin-top: 3rem;
+        }
+
+        .social-contact h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            color: var(--primary-color);
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 900px) {
+
+            .contact-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                order: 2;
+            }
+
+            .contact-form {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>DIGITAL DREAMS</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you! Reach out to us with any questions, feedback, or partnerships.</p>
+        </div>
+    </section>
+
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-method-content">
+                            <h3>Our Location</h3>
+                            <p>
+                                DIGITAL DREAMS<br>
+                                123 Innovation Plaza, Suite 500<br>
+                                San Francisco, CA 94105, USA
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-method-content">
+                            <h3>Phone</h3>
+                            <p>
+                                Main: +1 (415) 555-7890<br>
+                                Support: +1 (415) 555-7891
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-method-content">
+                            <h3>Email</h3>
+                            <p>
+                                General Inquiries: info@digitaldreams.com<br>
+                                Support: support@digitaldreams.com<br>
+                                Business Development: partnerships@digitaldreams.com
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-method-content">
+                            <h3>Business Hours</h3>
+                            <p>
+                                Monday - Friday: 9:00 AM - 6:00 PM PST<br>
+                                Saturday: 10:00 AM - 2:00 PM PST<br>
+                                Sunday: Closed
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="social-contact">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-discord"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inquiry-type">Inquiry Type</label>
+                            <select id="inquiry-type" name="inquiry-type">
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="partnership">Business Partnership</option>
+                                <option value="media">Media Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message*</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter" style="display: inline-block; margin-left: 8px;">Subscribe to our
+                                newsletter to stay updated</label>
+                        </div>
+
+                        <button type="submit" class="form-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2>Visit Our Office</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1034366249!2d-122.3942223!3d37.790568800000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580627b5ea1d1%3A0xd582f5d68e7a7481!2sSan%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1708789301635!5m2!1sen!2sus"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i>How can I get support for game issues?</h3>
+                    <p>For any technical issues with our games, please email our support team at
+                        support@digitaldreams.com with details about the issue, your device, and operating system. Our
+                        team aims to respond within 24 hours on business days.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i>Do you offer refunds for purchases?</h3>
+                    <p>Yes, we offer refunds for eligible purchases within 14 days of purchase. Please refer to our <a
+                            href="refund-policy.html">Refund Policy</a> for complete details on eligibility and the
+                        refund process.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i>How can I report a bug in a game?</h3>
+                    <p>You can report bugs by emailing support@digitaldreams.com with the subject line "Bug Report:
+                        [Game Name]". Include details about the bug, steps to reproduce it, and your device information
+                        to help us investigate.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i>Are you hiring game developers?</h3>
+                    <p>We're always looking for talented individuals to join our team! Check out our careers page for
+                        current openings, or send your resume and portfolio to careers@digitaldreams.com for future
+                        opportunities.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i>Can I integrate your games into my platform?</h3>
+                    <p>For business partnership inquiries or integration requests, please contact our business
+                        development team at partnerships@digitaldreams.com with details about your platform and
+                        integration needs.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i>Where can I find press materials for your games?</h3>
+                    <p>Press kits for our games are available upon request for verified media outlets. Please contact
+                        our media relations team at press@digitaldreams.com to request access to our press materials.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>DIGITAL DREAMS</h2>
+                    <p>The Premier Card Game Studio</p>
+                    <div class="company-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Plaza, Suite 500</p>
+                        <p>San Francisco, CA 94105, USA</p>
+                        <p><i class="fas fa-phone"></i> +1 (415) 555-7890</p>
+                        <p><i class="fas fa-envelope"></i> info@digitaldreams.com</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="games.html">Games</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="refund-policy.html">Refund Policy</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DIGITAL DREAMS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // In a real implementation, you would send the form data to a server
+            // For demo purposes, we'll just show a success message
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Validate required fields
+            if (name && email && message) {
+                // Form is valid
+
+                // Replace form with success message
+                const formElement = document.querySelector('.contact-form');
+                const successMessage = document.createElement('div');
+                successMessage.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; background-color: #f0f8f0; border-radius: 10px; margin-top: 2rem;">
+                        <i class="fas fa-check-circle" style="font-size: 3rem; color: #4CAF50; margin-bottom: 1rem;"></i>
+                        <h2>Thank You!</h2>
+                        <p>Your message has been sent successfully. We'll get back to you as soon as possible.</p>
+                    </div>
+                `;
+
+                formElement.innerHTML = successMessage.innerHTML;
+
+                // Scroll to success message
+                formElement.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Handle validation errors
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
+</body>
+
+</html>

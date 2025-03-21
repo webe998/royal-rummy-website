@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Games - DIGITAL DREAMS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Games page specific styles */
+        .games-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .games-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../assets/images/card-pattern.webp');
+            background-size: 200px;
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        .games-hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .games-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .games-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .games-filter {
+            background-color: var(--light-gray);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: var(--light-gray);
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        .games-grid {
+            padding: 5rem 0;
+        }
+
+        .game-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .game-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .game-card:hover .game-image img {
+            transform: scale(1.05);
+        }
+
+        .game-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 1;
+        }
+
+        .game-details {
+            padding: 1.5rem;
+        }
+
+        .game-title {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .game-description {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .game-rating {
+            display: flex;
+            align-items: center;
+            color: var(--accent-color);
+        }
+
+        .game-rating i {
+            margin-right: 0.25rem;
+        }
+
+        .game-players {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .game-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .game-price {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.2rem;
+        }
+
+        .game-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .game-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .featured-game {
+            padding: 3rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .featured-game .container {
+            max-width: 1000px;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .featured-details h2 {
+            color: var(--dark-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-category {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .featured-description {
+            color: var(--text-color);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .meta-item i {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .featured-action {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .featured-price {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+        }
+
+        .featured-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .featured-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .trailer-btn {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .trailer-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .coming-soon {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .coming-soon h2 {
+            color: var(--dark-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .coming-soon-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .coming-soon-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .coming-soon-image {
+            position: relative;
+            height: 200px;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        .coming-soon-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(247, 184, 1, 0.9);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .coming-soon-details {
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .coming-soon-title {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon-description {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .release-date {
+            color: var(--primary-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .newsletter-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .newsletter-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 5px 5px 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #e4a901;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            .featured-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .featured-image {
+                order: 1;
+            }
+
+            .featured-details {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .filter-options {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .featured-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .featured-action {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .trailer-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: 5px;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-btn {
+                border-radius: 5px;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>DIGITAL DREAMS</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="games.html" class="active">Games</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="games-hero">
+        <div class="container">
+            <h1>Our Games Collection</h1>
+            <p>Discover our selection of premium card games that blend strategy, luck, and social interaction for an
+                unforgettable gaming experience.</p>
+        </div>
+    </section>
+
+    <section class="games-filter">
+        <div class="container">
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All Games</button>
+                <button class="filter-btn" data-filter="card">Card Games</button>
+                <button class="filter-btn" data-filter="strategy">Strategy</button>
+                <button class="filter-btn" data-filter="family">Family Friendly</button>
+                <button class="filter-btn" data-filter="multiplayer">Multiplayer</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="games-grid">
+        <div class="container">
+            <div class="game-cards">
+                <div class="game-card" data-category="card strategy multiplayer">
+                    <div class="game-image">
+                        <span class="game-category">Card Game</span>
+                        <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=Royal+Rummy" alt="Royal Rummy">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Royal Rummy</h3>
+                        <p class="game-description">A classic card game with a royal twist. Form sets and sequences to
+                            be the first to empty your hand.</p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.5</span>
+                            </div>
+                            <div class="game-players">2-6 Players</div>
+                        </div>
+                        <div class="game-action">
+                            <div class="game-price">$14.99</div>
+                            <a href="#" class="game-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="card family multiplayer">
+                    <div class="game-image">
+                        <span class="game-category">Family</span>
+                        <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Card+Kingdoms"
+                            alt="Card Kingdoms">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Card Kingdoms</h3>
+                        <p class="game-description">Build your kingdom with cards, collect resources, and outmaneuver
+                            your opponents in this strategic card game.</p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>4.0</span>
+                            </div>
+                            <div class="game-players">2-4 Players</div>
+                        </div>
+                        <div class="game-action">
+                            <div class="game-price">$19.99</div>
+                            <a href="#" class="game-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="card strategy multiplayer">
+                    <div class="game-image">
+                        <span class="game-category">Strategy</span>
+                        <img src="https://via.placeholder.com/300x200/2ecc71/ffffff?text=Elemental+Wars"
+                            alt="Elemental Wars">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Elemental Wars</h3>
+                        <p class="game-description">Harness the power of elements in this tactical card battling game.
+                            Create powerful combinations to defeat your opponents.</p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                            <div class="game-players">2 Players</div>
+                        </div>
+                        <div class="game-action">
+                            <div class="game-price">$24.99</div>
+                            <a href="#" class="game-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="card family">
+                    <div class="game-image">
+                        <span class="game-category">Family</span>
+                        <img src="https://via.placeholder.com/300x200/9b59b6/ffffff?text=Memory+Match"
+                            alt="Memory Match Deluxe">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Memory Match Deluxe</h3>
+                        <p class="game-description">Test your memory with this beautifully illustrated matching card
+                            game. Perfect for family game nights.</p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>4.1</span>
+                            </div>
+                            <div class="game-players">1-8 Players</div>
+                        </div>
+                        <div class="game-action">
+                            <div class="game-price">$9.99</div>
+                            <a href="#" class="game-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="card strategy multiplayer">
+                    <div class="game-image">
+                        <span class="game-category">Strategy</span>
+                        <img src="https://via.placeholder.com/300x200/f39c12/ffffff?text=Merchant+Guild"
+                            alt="Merchant Guild">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Merchant Guild</h3>
+                        <p class="game-description">Become a medieval merchant in this economic strategy card game.
+                            Trade, invest, and outpace your competition.</p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.6</span>
+                            </div>
+                            <div class="game-players">3-5 Players</div>
+                        </div>
+                        <div class="game-action">
+                            <div class="game-price">$29.99</div>
+                            <a href="#" class="game-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="card family multiplayer">
+                    <div class="game-image">
+                        <span class="game-category">Card Game</span>
+                        <img src="https://via.placeholder.com/300x200/1abc9c/ffffff?text=Word+Wizards"
+                            alt="Word Wizards">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Word Wizards</h3>
+                        <p class="game-description">Spell your way to victory in this magical word-building card game.
+                            Expand your vocabulary while having fun.</p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <span>3.5</span>
+                            </div>
+                            <div class="game-players">2-8 Players</div>
+                        </div>
+                        <div class="game-action">
+                            <div class="game-price">$12.99</div>
+                            <a href="#" class="game-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-game">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="https://via.placeholder.com/600x400/3498db/ffffff?text=Royal+Rummy+Deluxe+Edition"
+                        alt="Royal Rummy Deluxe Edition">
+                </div>
+                <div class="featured-details">
+                    <span class="featured-category">Featured Game</span>
+                    <h2>Royal Rummy Deluxe Edition</h2>
+                    <p class="featured-description">Experience the ultimate rummy game with our premium deluxe edition.
+                        Featuring high-quality cards, custom tokens, and an elegant storage box. This collector's
+                        edition includes all expansions and limited edition character cards.</p>
+                    <div class="featured-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>2-8 Players</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>30-60 Minutes</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.9/5 Rating</span>
+                        </div>
+                    </div>
+                    <div class="featured-action">
+                        <div class="featured-price">$39.99</div>
+                        <a href="#" class="featured-btn">Pre-order Now</a>
+                        <button class="trailer-btn">
+                            <i class="fas fa-play"></i>
+                            Watch Trailer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coming-soon">
+        <div class="container">
+            <h2>Coming Soon</h2>
+            <p>Stay tuned for our upcoming game releases. Join our newsletter to get early access and exclusive offers.
+            </p>
+
+            <div class="coming-soon-cards">
+                <div class="coming-soon-card">
+                    <div class="coming-soon-image">
+                        <span class="coming-soon-badge">Q3 2024</span>
+                        <img src="https://via.placeholder.com/300x200/34495e/ffffff?text=Mystery+Mansion"
+                            alt="Mystery Mansion">
+                    </div>
+                    <div class="coming-soon-details">
+                        <h3 class="coming-soon-title">Mystery Mansion</h3>
+                        <p class="coming-soon-description">A suspenseful card game of deduction and mystery. Explore the
+                            mansion, find clues, and solve the case before time runs out.</p>
+                        <div class="release-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>Expected: September 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coming-soon-card">
+                    <div class="coming-soon-image">
+                        <span class="coming-soon-badge">Q4 2024</span>
+                        <img src="https://via.placeholder.com/300x200/7f8c8d/ffffff?text=Cosmic+Conquest"
+                            alt="Cosmic Conquest">
+                    </div>
+                    <div class="coming-soon-details">
+                        <h3 class="coming-soon-title">Cosmic Conquest</h3>
+                        <p class="coming-soon-description">An epic space-themed strategy card game. Build your fleet,
+                            explore galaxies, and conquer the universe.</p>
+                        <div class="release-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>Expected: November 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coming-soon-card">
+                    <div class="coming-soon-image">
+                        <span class="coming-soon-badge">Q1 2025</span>
+                        <img src="https://via.placeholder.com/300x200/16a085/ffffff?text=Mythical+Beasts"
+                            alt="Mythical Beasts">
+                    </div>
+                    <div class="coming-soon-details">
+                        <h3 class="coming-soon-title">Mythical Beasts</h3>
+                        <p class="coming-soon-description">Collect and battle with legendary creatures from world
+                            mythology in this exciting card game for all ages.</p>
+                        <div class="release-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>Expected: February 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Join Our Gaming Community</h2>
+            <p>Subscribe to our newsletter to receive updates on new game releases, exclusive offers, and gaming tips.
+            </p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>DIGITAL DREAMS</h2>
+                    <p>The Premier Card Game Studio</p>
+                    <div class="company-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Plaza, Suite 500</p>
+                        <p>San Francisco, CA 94105, USA</p>
+                        <p><i class="fas fa-phone"></i> +1 (415) 555-7890</p>
+                        <p><i class="fas fa-envelope"></i> info@digitaldreams.com</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="games.html">Games</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="refund-policy.html">Refund Policy</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DIGITAL DREAMS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Game filtering functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const gameCards = document.querySelectorAll('.game-card');
+
+            // Filter games based on category
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Get filter value
+                    const filterValue = button.getAttribute('data-filter');
+
+                    // Filter game cards
+                    gameCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            if (card.getAttribute('data-category').includes(filterValue)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const emailInput = this.querySelector('.newsletter-input');
+                const email = emailInput.value.trim();
+
+                if (email) {
+                    // In a real application, you would send the email to a server
+                    // For demo purposes, we'll just show a success message
+
+                    // Clear input
+                    emailInput.value = '';
+
+                    // Show success message
+                    const formContainer = this.parentElement;
+                    const successMessage = document.createElement('div');
+                    successMessage.innerHTML = `
+                        <div style="background-color: rgba(255, 255, 255, 0.1); border-radius: 5px; padding: 1rem; margin-top: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 0.5rem;"></i>
+                            <span>Thank you for subscribing! Check your email for confirmation.</span>
+                        </div>
+                    `;
+
+                    // Replace form with success message
+                    formContainer.replaceChild(successMessage, this);
+
+                    // Reset form after 5 seconds (in a real app, you wouldn't do this)
+                    setTimeout(() => {
+                        formContainer.replaceChild(newsletterForm, successMessage);
+                    }, 5000);
+                }
+            });
+
+            // Trailer button functionality
+            const trailerBtn = document.querySelector('.trailer-btn');
+            trailerBtn.addEventListener('click', function () {
+                // In a real application, you would open a video modal
+                // For demo purposes, we'll just show an alert
+                alert('Video trailer would play here!');
+            });
+        });
+    </script>
+</body>
+
+</html>

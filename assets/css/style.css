@@ -469,6 +469,22 @@ footer {
     opacity: 0.8;
 }
 
+.company-info {
+    margin-top: 1.5rem;
+}
+
+.company-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.company-info i {
+    width: 20px;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
 .footer-links {
     display: flex;
     flex-wrap: wrap;
