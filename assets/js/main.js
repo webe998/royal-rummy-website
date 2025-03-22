@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 100, // Offset for fixed header
+                    top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
 
@@ -77,11 +77,28 @@ document.addEventListener('DOMContentLoaded', function () {
         newsletterForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
 
-            if (emailInput.value.trim() !== '') {
-                // In a real application, you would send this to your server
-                alert('Thank you for subscribing! You would receive updates at: ' + emailInput.value);
+            if (email) {
+                // 这里可以添加表单提交的逻辑，例如AJAX请求
+                // 为了演示，我们只显示一个成功消息
                 emailInput.value = '';
+
+                const formContainer = this.parentElement;
+                const successMessage = document.createElement('div');
+                successMessage.innerHTML = `
+                    <div style="background-color: rgba(255, 255, 255, 0.1); border-radius: 5px; padding: 1rem; margin-top: 1rem;">
+                        <i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 0.5rem;"></i>
+                        <span>感谢您的订阅！请查收确认邮件。</span>
+                    </div>
+                `;
+
+                formContainer.appendChild(successMessage);
+
+                // 5秒后移除成功消息
+                setTimeout(() => {
+                    formContainer.removeChild(successMessage);
+                }, 5000);
             }
         });
     }
@@ -147,4 +164,139 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         </style>
     `);
-}); 
+
+    // 互动按钮功能
+    const startNowBtn = document.getElementById('startNow');
+    const interactScreen = document.getElementById('interactWithScreen');
+
+    if (startNowBtn && interactScreen) {
+        startNowBtn.addEventListener('click', function () {
+            interactScreen.classList.remove('active');
+        });
+    }
+
+    // 移动端互动按钮
+    const startNowMobileBtn = document.getElementById('startNowMobile');
+    const interactScreenMobile = document.getElementById('interactWithScreenMobile');
+
+    if (startNowMobileBtn && interactScreenMobile) {
+        startNowMobileBtn.addEventListener('click', function () {
+            interactScreenMobile.classList.remove('active');
+        });
+    }
+
+    // 视差效果
+    const butter = {
+        init: function (options) {
+            const defaults = {
+                wrapperId: 'butter',
+                wrapperDamper: 0.07,
+                cancelOnTouch: false
+            };
+            this.options = Object.assign({}, defaults, options);
+            this.wrapper = document.getElementById(this.options.wrapperId);
+
+            if (!this.wrapper) {
+                return;
+            }
+
+            this.scroller = window;
+            this.wrapperOffset = 0;
+            this.animateId = null;
+            this.resizing = false;
+            this.active = true;
+            this.wrapperHeight = this.wrapper.offsetHeight;
+            this.bodyHeight = document.body.offsetHeight;
+
+            this.refresh();
+            this.setupEvents();
+            this.animate();
+        },
+
+        setupEvents: function () {
+            if (this.options.cancelOnTouch) {
+                document.body.addEventListener('touchstart', this.cancel.bind(this));
+            }
+            window.addEventListener('resize', this.resize.bind(this));
+            window.addEventListener('scroll', this.scroll.bind(this));
+        },
+
+        resize: function () {
+            this.resizing = true;
+        },
+
+        scroll: function () {
+            if (this.active) {
+                this.wrapperOffset = window.pageYOffset * 0.1;
+            }
+        },
+
+        animate: function () {
+            if (this.resizing) {
+                this.refresh();
+                this.resizing = false;
+            }
+
+            if (this.active) {
+                this.wrapper.style.transform = 'translateY(-' + this.wrapperOffset + 'px)';
+            }
+
+            this.animateId = requestAnimationFrame(this.animate.bind(this));
+        },
+
+        cancel: function () {
+            if (this.active) {
+                cancelAnimationFrame(this.animateId);
+                window.removeEventListener('resize', this.resize.bind(this));
+                window.removeEventListener('scroll', this.scroll.bind(this));
+                this.wrapper.removeAttribute('style');
+                this.active = false;
+            }
+        },
+
+        refresh: function () {
+            this.wrapperHeight = this.wrapper.offsetHeight;
+            this.bodyHeight = document.body.offsetHeight;
+        }
+    };
+
+    // 初始化owlCarousel，如果存在
+    if (typeof $.fn.owlCarousel !== 'undefined') {
+        $('.products-slider.owl-carousel').owlCarousel({
+            margin: 10,
+            items: 1,
+            dots: false,
+            autoWidth: false,
+            nav: true,
+            navText: ["<div class='nav-btn prev-slide'><i class='fas fa-chevron-left'></i></div>", "<div class='nav-btn next-slide'><i class='fas fa-chevron-right'></i></div>"],
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    autoWidth: true,
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                    autoWidth: true,
+                }
+            }
+        });
+    }
+
+    // 初始化WOW.js，如果存在
+    if (typeof WOW !== 'undefined') {
+        new WOW().init();
+    }
+});
+
+// 如果butter对象存在，初始化视差效果
+if (typeof butter !== 'undefined') {
+    butter.init({
+        cancelOnTouch: true
+    });
+} 
