@@ -3,725 +3,334 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>DIGITAL DREAMS - Card Game Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Rummy - Premium Card Game Experience</title>
     <meta name="description"
-        content="DIGITAL DREAMS is a professional card game development studio, focused on creating high-quality Rummy card games. We offer smooth gameplay experience, real-time multiplayer, multiple game modes, in-game chat, virtual currency integration, and more. Experience our games and feel the fun of card games!">
-    <meta name="keywords"
-        content="card games, casino game, gaming app, leaderboards, Multiplayer mode, online gaming, Rummy game app, Virtual chips">
-    <link rel="shortcut icon" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        content="Experience the thrill of Royal Rummy - the premium card game for all ages. Play online or download our app.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.png">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="assets/js/main.js" defer></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="wow fadeIn dark_theme" data-wow-duration="1s">
-    <div class="menuButton" id="openMenu">
-        <i class="zmdi zmdi-menu"></i>
-    </div>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                Royal <span>Rummy</span>
+            </div>
 
-    <div id="butter">
-        <div class="body_ineer">
-            <div class="row no-gutters">
-                <div class="col-12 col-lg-6 p-0">
-                    <!-- Banner section start -->
-                    <div class="banner">
-                        <header class="px-2 pt-2">
-                            <nav class="navbar navbar-light px-sm-0 px-md-0 px-0 px-lg-4">
-                                <div
-                                    class="container-fluid py-3 col-sm-12 col-md-11 col-lg-10 d-flex d-lg-block d-xl-flex align-items-center">
-                                    <a class="navbar-brand d-block m-0 mx-auto ml-md-0" href="index.html">
-                                        <h1>DIGITAL DREAMS</h1>
-                                    </a>
-                                </div>
-                            </nav>
-                        </header>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
 
-                        <div class="container-fluid col-sm-12 col-md-11 col-lg-11 col-xl-9 px-lg-4">
-                            <div class="row align-items-center">
-                                <div class="col-sm-12 col-md-12 col-lg-12 pb-4 pb-lg-0 px-0">
-                                    <div class="banner_text pt-0 pt-md-0 pt-lg-2">
-                                        <h3 class="text-center text-lg-left wow fadeInUp pb-3" data-wow-duration=".1s">
-                                            Royal Rummy</h3>
-                                        <h1 class="text-center text-lg-left wow fadeInUp pb-3 d-none d-lg-block"
-                                            data-wow-duration=".3s">
-                                            Card Game Studio</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/games.html">Games</a></li>
+                <li><a href="pages/about.html">About Us</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-                                        <div
-                                            class="d-block d-lg-none pb-0 pb-lg-0 position-relative right_row_inner right_row_innerMovile mb-5">
-                                            <div class="interactWithScreen active" id="interactWithScreenMobile">
-                                                <div class="card">
-                                                    <h2>Interact with <br>screens</h2>
-                                                    <button class="btn primary_button" type="button"
-                                                        id="startNowMobile">
-                                                        Start Now
-                                                    </button>
-                                                    <img src="assets/images/hand.png" class="img-fluid">
-                                                </div>
-                                            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Experience the Royal Treatment</h1>
+            <h2 class="hero-subtitle">The Ultimate Rummy Card Game</h2>
+            <p class="hero-text">
+                Dive into the ultimate card game experience with Royal Rummy. Whether you're a beginner or a seasoned
+                player, our beautiful design and smooth gameplay will keep you entertained for hours.
+            </p>
+            <div class="cta-buttons">
+                <a href="pages/games.html" class="btn btn-primary">Play Now</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
 
-                                            <div class="tab-content" id="nav-tab">
-                                                <button class="btn spinner_box" type="button" disabled
-                                                    id="iframe_mobile_loader">
-                                                    <span class="spinner-border spinner-border-sm" role="status"
-                                                        aria-hidden="true"></span>
-                                                    Please Wait
-                                                </button>
-                                                <div class="tab-pane fade show active" id="user-app_mobile"
-                                                    role="tabpanel" aria-labelledby="user-app_tab">
-                                                    <iframe id="frame-0" src="about:blank" allowTransparency="true"
-                                                        frameborder="0" width="100%" height="100%"
-                                                        onload="onFrameLoad()">
-                                                    </iframe>
-                                                </div>
-                                            </div>
+    <!-- Features Section -->
+    <section id="features" class="section features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Royal Rummy?</h2>
+                <p class="section-text">
+                    Our games are designed with the player in mind, offering unmatched quality and gameplay experience.
+                </p>
+            </div>
 
-                                            <div class="right_row_header px-sm-0 px-md-0 px-lg-0 px-0 pb-5 pt-2">
-                                                <div class="row align-items-center position-relative mt-4">
-                                                    <h2 class="px-sm-0 text-center col-12 pb-3 mb-0">Experience Our
-                                                        Games</h2>
-                                                </div>
-                                                <div class="row align-items-center no-gutters wow fadeInUp"
-                                                    data-wow-duration="0.8s">
-                                                    <div class="col-12 col-sm-10 col-md-10 col-lg-12 col-xl-12 mx-auto">
-                                                        <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                                            <div class="products-slider owl-carousel owl-theme">
-                                                                <div class="item">
-                                                                    <a class="border-0 nav-item nav-link col active"
-                                                                        id="classic-rummy-tab" data-toggle="tab"
-                                                                        href="#classic-rummy_mobile" role="tab"
-                                                                        aria-controls="classic-rummy"
-                                                                        aria-selected="true">
-                                                                        <span>Classic Rummy</span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="item">
-                                                                    <a class="border-0 nav-item nav-link col"
-                                                                        id="royal-tournaments-tab" data-toggle="tab"
-                                                                        href="#royal-tournaments_mobile" role="tab"
-                                                                        aria-controls="royal-tournaments"
-                                                                        aria-selected="false">
-                                                                        <span>Royal Tournaments</span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="item">
-                                                                    <a class="border-0 nav-item nav-link col"
-                                                                        id="rummy-fusion-tab" data-toggle="tab"
-                                                                        href="#rummy-fusion_mobile" role="tab"
-                                                                        aria-controls="rummy-fusion"
-                                                                        aria-selected="false">
-                                                                        <span>Rummy Fusion</span>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <h1 class="text-center text-lg-left wow fadeInUp pb-3 d-block d-lg-none"
-                                            data-wow-duration=".3s">
-                                            Card Game Studio</h1>
-
-                                        <p class="text-center text-lg-left wow fadeInUp m-0" data-wow-duration=".5s">
-                                            Welcome to the ultimate online card gaming experience – Royal Rummy! With
-                                            this easy-to-use gaming app, you can quickly enjoy the excitement of card
-                                            games. We offer a seamless gaming experience with smooth UI/UX and easy
-                                            navigation.
-                                        </p>
-
-                                        <div class="btn_box get_it_app2 w-100 wow fadeInUp mt-3 col-11 col-md-12 mx-auto"
-                                            data-wow-duration=".5s">
-                                            <div class="row no-gutters">
-                                                <div class="col-12 col-md-8 px-0">
-                                                    <h4 class="text-center text-md-left pb-2 pb-md-0 pl-md-3">
-                                                        <strong>Download app</strong> on your phone
-                                                    </h4>
-                                                </div>
-                                                <div class="col-12 col-md-4">
-                                                    <a href="pages/games.html"
-                                                        class="btn primary_button rounded d-flex align-items-center mx-auto ml-md-auto mr-md-0"
-                                                        id="GooglePlay">
-                                                        <img src="assets/images/playstore.png" class="img-fluid" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="btn_box get_it_app2 w-100 wow fadeInUp col-11 col-md-12 mx-auto"
-                                            data-wow-duration=".5s">
-                                            <div class="row no-gutters">
-                                                <div class="col-12 col-md-8 px-0">
-                                                    <h4 class="text-center text-md-left pb-2 pb-md-0 pl-md-3">Watch App
-                                                        <strong>Demo Video</strong>
-                                                    </h4>
-                                                </div>
-                                                <div class="col-12 col-md-4">
-                                                    <button type="button"
-                                                        class="btn primary_button youtube_btn rounded d-flex align-items-center mx-auto ml-md-auto mr-md-0">
-                                                        <img src="assets/images/Youtube.png" class="img-fluid" alt="">
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="get_admin_backend pt-5">
-                                            <h2>Need More Information?</h2>
-                                            <h4>Feel free to contact us...</h4>
-                                            <div class="row align-items-center pt-2 pb-3 no-gutters">
-                                                <div class="col-12 col-md-12 col-lg-12 col-xl-9">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-12 col-md-7 pb-2">
-                                                            <a href="pages/contact.html"
-                                                                class="btn d-flex align-items-center WhatsAppBtn"
-                                                                style="height: 55px;">
-                                                                <span class="d-flex align-items-center mx-auto"
-                                                                    style="font-size: .9rem;">
-                                                                    <i class="fas fa-comment"></i> Contact Us
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-12 col-md-5 pb-2">
-                                                            <a href="mailto:info@digitaldreams.com"
-                                                                class="btn d-flex align-items-center messageUs"
-                                                                style="height: 55px;">
-                                                                <span class="d-flex align-items-center mx-auto"
-                                                                    style="font-size: .9rem;">
-                                                                    <i class="fas fa-envelope"></i> Email Us
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-md-12 col-lg-3 col-xl-3 pt-3 pt-xl-0 d-flex">
-                                                    <div
-                                                        class="social-icons d-flex mx-auto ml-md-auto mr-md-0 pt-3 pt-md-0">
-                                                        <a href="#" class="d-block" target="_blank">
-                                                            <i class="fab fa-facebook-f"></i>
-                                                        </a>
-                                                        <a href="#" class="d-block" target="_blank">
-                                                            <i class="fab fa-twitter"></i>
-                                                        </a>
-                                                        <a href="#" class="d-block" target="_blank">
-                                                            <i class="fab fa-instagram"></i>
-                                                        </a>
-                                                        <a href="#" class="d-block" target="_blank">
-                                                            <i class="fab fa-discord"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
                     </div>
-                    <!-- Banner section end -->
+                    <h3 class="feature-title">Award-Winning Games</h3>
+                    <p class="feature-text">
+                        Our games have been recognized for their excellence in design, gameplay, and innovation.
+                    </p>
                 </div>
 
-                <div class="col-12 col-lg-6 p-0 pt-4 d-none d-lg-block right_row_container">
-                    <!-- App section start -->
-                    <div class="right_row px-2 pt-4 wow fadeInUp m-0" data-wow-duration=".5s">
-                        <div class="right_row_inner pt-3">
-                            <div class="interactWithScreen active" id="interactWithScreen">
-                                <div class="card">
-                                    <h2>Interact with <br>screens</h2>
-                                    <button class="btn primary_button" type="button" id="startNow">
-                                        Start Now
-                                    </button>
-                                    <img src="assets/images/hand.png" class="img-fluid">
-                                </div>
-                            </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Global Community</h3>
+                    <p class="feature-text">
+                        Join millions of players worldwide for the ultimate competitive experience.
+                    </p>
+                </div>
 
-                            <div class="tabContentBg">
-                                <img src="assets/images/phone_bg.jpg">
-                            </div>
-                            <div class="right_row_header px-sm-0 px-md-0 px-lg-0 px-0 pb-5 pt-2">
-                                <div class="row align-items-center position-relative mt-4">
-                                    <div class="ThemeButtonBox col-12 pb-3 pb-md-0">
-                                        <div class="darkTheme_lightThemeButton d-flex mx-auto" id="darkTheme">
-                                            <i class="zmdi zmdi-sun"></i>
-                                            <i class="zmdi zmdi-brightness-3"></i>
-                                        </div>
-                                    </div>
-                                    <h2 class="px-sm-0 text-center col-12 pb-3 mb-0">Experience Our Games</h2>
-                                </div>
-                                <div class="row align-items-center no-gutters wow fadeInUp" data-wow-duration="0.8s">
-                                    <div class="col-12 col-sm-10 col-md-10 col-lg-12 col-xl-12 mx-auto">
-                                        <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                            <div class="products-slider owl-carousel owl-theme">
-                                                <div class="item">
-                                                    <a class="border-0 nav-item nav-link col active"
-                                                        id="classic-rummy-tab" data-toggle="tab" href="#classic-rummy"
-                                                        role="tab" aria-controls="classic-rummy" aria-selected="true">
-                                                        <span>Classic Rummy</span>
-                                                    </a>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="border-0 nav-item nav-link col" id="royal-tournaments-tab"
-                                                        data-toggle="tab" href="#royal-tournaments" role="tab"
-                                                        aria-controls="royal-tournaments" aria-selected="false">
-                                                        <span>Royal Tournaments</span>
-                                                    </a>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="border-0 nav-item nav-link col" id="rummy-fusion-tab"
-                                                        data-toggle="tab" href="#rummy-fusion" role="tab"
-                                                        aria-controls="rummy-fusion" aria-selected="false">
-                                                        <span>Rummy Fusion</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Multi-Platform</h3>
+                    <p class="feature-text">
+                        Play on your computer, tablet, or smartphone - your progress syncs across all devices.
+                    </p>
+                </div>
 
-                            <div class="tab-content position-relative" id="nav-tab">
-                                <button class="btn spinner_box" type="button" disabled id="iframe_loader">
-                                    <span class="spinner-border spinner-border-sm" role="status"
-                                        aria-hidden="true"></span>
-                                    Please Wait
-                                </button>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Secure Gaming</h3>
+                    <p class="feature-text">
+                        Your privacy and security are our top priorities, with industry-leading encryption.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                <div class="tab-pane fade show active" id="classic-rummy" role="tabpanel"
-                                    aria-labelledby="classic-rummy-tab">
-                                    <iframe id="frame-1" src="about:blank" allowTransparency="true" frameborder="0"
-                                        width="100%" height="100%">
-                                    </iframe>
-                                </div>
-                                <div class="tab-pane fade" id="royal-tournaments" role="tabpanel"
-                                    aria-labelledby="royal-tournaments-tab">
-                                    <iframe id="frame-2" src="about:blank" allowTransparency="true" frameborder="0"
-                                        width="100%" height="100%">
-                                    </iframe>
-                                </div>
-                                <div class="tab-pane fade" id="rummy-fusion" role="tabpanel"
-                                    aria-labelledby="rummy-fusion-tab">
-                                    <iframe id="frame-3" src="about:blank" allowTransparency="true" frameborder="0"
-                                        width="100%" height="100%">
-                                    </iframe>
-                                </div>
+    <!-- Popular Games Section -->
+    <section id="games" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Games</h2>
+                <p class="section-text">
+                    Explore our collection of high-quality Rummy games for all skill levels.
+                </p>
+            </div>
+
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="assets/images/game1.jpg" alt="Classic Rummy">
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Classic Rummy</h3>
+                        <p class="game-text">
+                            The traditional Rummy game with classic rules and elegant design.
+                        </p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8/5</span>
                             </div>
+                            <a href="pages/games.html" class="btn btn-primary">Play</a>
                         </div>
                     </div>
-                    <!-- App section end -->
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="assets/images/game2.jpg" alt="Royal Tournaments">
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Royal Tournaments</h3>
+                        <p class="game-text">
+                            Compete in weekly tournaments with players from around the world.
+                        </p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9/5</span>
+                            </div>
+                            <a href="pages/games.html" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="assets/images/game3.jpg" alt="Rummy Fusion">
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Rummy Fusion</h3>
+                        <p class="game-text">
+                            A modern twist on the classic game with new rules and exciting power-ups.
+                        </p>
+                        <div class="game-meta">
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7/5</span>
+                            </div>
+                            <a href="pages/games.html" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Players Say</h2>
+                <p class="section-text">
+                    Hear from our community of players around the world.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Royal Rummy has completely changed how I play card games online. The interface is intuitive,
+                        and the gameplay is smooth. It's my go-to game during my commute!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="assets/images/testimonial1.jpg" alt="Sarah J.">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Sarah J.</h4>
+                            <p class="author-title">Playing since 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "I've tried many Rummy games, but Royal Rummy stands out with its beautiful design and attention
+                        to detail. The tournaments add an extra level of excitement!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="assets/images/testimonial2.jpg" alt="Michael T.">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Michael T.</h4>
+                            <p class="author-title">Tournament Champion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As a beginner, I found the tutorials incredibly helpful. Now I'm playing in tournaments and
+                        having a blast! The community is friendly and supportive."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="assets/images/testimonial3.jpg" alt="Elena R.">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Elena R.</h4>
+                            <p class="author-title">Casual Player</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2 class="cta-title">Stay in the Loop</h2>
+            <p class="cta-text">
+                Subscribe to our newsletter to get updates on new games, tournaments, and exclusive offers.
+            </p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-secondary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h3>Royal Rummy</h3>
+                <p>
+                    Experience the ultimate card game with stunning visuals and smooth gameplay.
+                </p>
+                <div class="company-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Game Street, Suite 456, New York, NY 10001</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@royalrummy.com</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/games.html">Games</a></li>
+                    <li><a href="pages/about.html">About Us</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="pages/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="pages/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="pages/refund-policy.html">Refund Policy</a></li>
+                    <li><a href="pages/cookie-policy.html">Cookie Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Download Our App</h3>
+                <p>
+                    Get the full experience on your mobile device.
+                </p>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <img src="assets/images/app-store.png" alt="Download on App Store">
+                    </a>
+                    <a href="#" class="app-button">
+                        <img src="assets/images/google-play.png" alt="Get it on Google Play">
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Features section start -->
-        <section id="features" class="features padding-top padding-bottom">
-            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 px-0 mx-auto px-lg-4">
-                <h2 class="similar_apps_heading pb-4">Why Choose DIGITAL DREAMS?</h2>
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <h3>Award-Winning Games</h3>
-                            <p>Our Rummy games have received multiple industry awards for excellence in design and
-                                gameplay.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h3>Global Community</h3>
-                            <p>Join millions of players worldwide and experience competitive yet friendly gameplay.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3>Multi-Platform</h3>
-                            <p>Play on any device - our games are available on mobile, tablet, and desktop platforms.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3>Secure Gaming</h3>
-                            <p>We prioritize your security with industry-leading encryption and fair play systems.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Royal Rummy. All Rights Reserved.</p>
             </div>
-        </section>
-        <!-- Features section end -->
-
-        <!-- Games section start -->
-        <section id="games" class="products similar_apps padding-bottom">
-            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 px-0 mx-auto px-lg-4">
-                <h2 class="similar_apps_heading pb-4">Our Popular Games</h2>
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-4">
-                        <div class="card border-0" style="background: #3498db">
-                            <a class="d-flex w-100" href="pages/games.html">
-                                <div class="text-box">
-                                    <h2>Classic Rummy</h2>
-                                    <h3>The traditional Rummy experience with modern graphics and smooth gameplay.</h3>
-                                    <div class="icon_box">
-                                        <i class="fab fa-android"></i>
-                                        <i class="fab fa-apple"></i>
-                                    </div>
-                                </div>
-                                <div class="img_box">
-                                    <img src="assets/images/game1.webp" alt="Classic Rummy"
-                                        class="img-fluid wow slideInUp" data-wow-duration=".5s">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4">
-                        <div class="card border-0" style="background: #e74c3c">
-                            <a class="d-flex w-100" href="pages/games.html">
-                                <div class="text-box">
-                                    <h2>Royal Tournaments</h2>
-                                    <h3>Compete in daily and weekly tournaments with players from around the world.</h3>
-                                    <div class="icon_box">
-                                        <i class="fab fa-android"></i>
-                                        <i class="fab fa-apple"></i>
-                                    </div>
-                                </div>
-                                <div class="img_box">
-                                    <img src="assets/images/game2.webp" alt="Royal Tournaments"
-                                        class="img-fluid wow slideInUp" data-wow-duration=".5s">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4">
-                        <div class="card border-0" style="background: #2ecc71">
-                            <a class="d-flex w-100" href="pages/games.html">
-                                <div class="text-box">
-                                    <h2>Rummy Fusion</h2>
-                                    <h3>A unique blend of classic Rummy with exciting new mechanics and special cards.
-                                    </h3>
-                                    <div class="icon_box">
-                                        <i class="fab fa-android"></i>
-                                        <i class="fab fa-apple"></i>
-                                    </div>
-                                </div>
-                                <div class="img_box">
-                                    <img src="assets/images/game3.webp" alt="Rummy Fusion"
-                                        class="img-fluid wow slideInUp" data-wow-duration=".5s">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Games section end -->
-
-        <!-- Testimonials section start -->
-        <section id="testimonials" class="padding-top padding-bottom"
-            style="background-color: var(--secondary-color); color: white;">
-            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 px-0 mx-auto px-lg-4">
-                <h2 class="similar_apps_heading pb-4" style="color: white;">What Our Players Say</h2>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="testimonial">
-                            <div class="testimonial-content">
-                                <p>"DIGITAL DREAMS offers the best online card game experience I've ever had. The
-                                    attention to detail is impressive!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="assets/images/avatar1.webp" alt="Player Avatar">
-                                <div class="author-info">
-                                    <h4>Sarah Johnson</h4>
-                                    <p>Playing since 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="testimonial">
-                            <div class="testimonial-content">
-                                <p>"The tournaments are competitive yet fair, and the community is friendly. I've made
-                                    real friends through DIGITAL DREAMS!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="assets/images/avatar2.webp" alt="Player Avatar">
-                                <div class="author-info">
-                                    <h4>Michael Chen</h4>
-                                    <p>Tournament Champion 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Testimonials section end -->
-
-        <!-- Newsletter section start -->
-        <section id="newsletter" class="newsletter-section padding-top padding-bottom">
-            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 px-0 mx-auto px-lg-4">
-                <h2>Join Our Gaming Community</h2>
-                <p>Subscribe to our newsletter to receive updates on new game releases, exclusive offers, and gaming
-                    tips.</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                    <button type="submit" class="newsletter-btn">Subscribe</button>
-                </form>
-            </div>
-        </section>
-        <!-- Newsletter section end -->
-
-        <!-- Footer section start -->
-        <footer class="padding-top position-relative px-lg-4">
-            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 padding-bottom">
-                <div class="row align-items-start">
-                    <div class="col-sm-12 col-md-12 col-lg-6">
-                        <a class="navbar-brand d-block m-0" href="index.html">
-                            <h2>DIGITAL DREAMS</h2>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-12 col-md-12 col-lg-6 pr-lg-5">
-                        <div class="contacts col-sm-12 col-md-12 col-lg-12 col-xl-8 px-0 ml-auto">
-                            <div class="box d-flex align-items-center w-100 pt-2">
-                                <h2>Follow</h2>
-                                <div class="icon_box d-flex ml-auto">
-                                    <a href="#" class="d-block" target="_blank">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#" class="d-block" target="_blank">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="#" class="d-block" target="_blank">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    <a href="#" class="d-block" target="_blank">
-                                        <i class="fab fa-discord"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="box d-flex align-items-center w-100">
-                                <h2>Contact</h2>
-                                <h3 class="ml-auto">info@digitaldreams.com</h3>
-                            </div>
-
-                            <div class="footer-content">
-                                <div class="footer-logo">
-                                    <p>The Premier Card Game Studio</p>
-                                    <div class="company-info">
-                                        <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Plaza, Suite 500</p>
-                                        <p>San Francisco, CA 94105, USA</p>
-                                        <p><i class="fas fa-phone"></i> +1 (415) 555-7890</p>
-                                        <p><i class="fas fa-envelope"></i> info@digitaldreams.com</p>
-                                    </div>
-                                </div>
-                                <div class="footer-links">
-                                    <div class="footer-column">
-                                        <h3>Quick Links</h3>
-                                        <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="pages/games.html">Games</a></li>
-                                            <li><a href="pages/about.html">About Us</a></li>
-                                            <li><a href="pages/contact.html">Contact</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="footer-column">
-                                        <h3>Legal</h3>
-                                        <ul>
-                                            <li><a href="pages/privacy-policy.html">Privacy Policy</a></li>
-                                            <li><a href="pages/terms-of-service.html">Terms of Service</a></li>
-                                            <li><a href="pages/refund-policy.html">Refund Policy</a></li>
-                                            <li><a href="pages/cookie-policy.html">Cookie Policy</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="box d-flex align-items-center w-100">
-                                <div class="darkTheme_lightThemeButton d-flex ml-auto mr-0">
-                                    <i class="zmdi zmdi-sun"></i>
-                                    <i class="zmdi zmdi-brightness-3"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 DIGITAL DREAMS. All rights reserved.</p>
-            </div>
-        </footer>
-        <!-- Footer section end -->
-    </div>
-
-    <!-- Category menu Start -->
-    <div class="categoryMenu" id="categoryMenu">
-        <div class="d-flex">
-            <h2 class="header_text">Game Categories</h2>
-            <div class="w-100" style="padding-top: 40px;">
-                <div class="list-group d-block col-12 col-md-12 col-xl-12 mx-auto px-0">
-                    <div class="row">
-                        <div class="col-12 col-md-4 col-lg-3">
-                            <a href="pages/games.html" class="list-group-item list-group-item-action">
-                                <div class="item-header d-flex">
-                                    <h5 class="mb-1">
-                                        Card Games </h5>
-                                    <div class="img_box mr-0 ml-auto">
-                                        <img src="assets/images/game1.webp" class="img-fluid" alt="Card Games"
-                                            loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="text_box">
-                                    <p>Traditional and modern card games with exciting twists</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-4 col-lg-3">
-                            <a href="pages/games.html" class="list-group-item list-group-item-action">
-                                <div class="item-header d-flex">
-                                    <h5 class="mb-1">
-                                        Strategy Games </h5>
-                                    <div class="img_box mr-0 ml-auto">
-                                        <img src="assets/images/game2.webp" class="img-fluid" alt="Strategy Games"
-                                            loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="text_box">
-                                    <p>Strategic games that challenge your mind and planning skills</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-4 col-lg-3">
-                            <a href="pages/games.html" class="list-group-item list-group-item-action">
-                                <div class="item-header d-flex">
-                                    <h5 class="mb-1">
-                                        Family Games </h5>
-                                    <div class="img_box mr-0 ml-auto">
-                                        <img src="assets/images/game3.webp" class="img-fluid" alt="Family Games"
-                                            loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="text_box">
-                                    <p>Fun games for the whole family to enjoy together</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-4 col-lg-3">
-                            <a href="pages/games.html" class="list-group-item list-group-item-action">
-                                <div class="item-header d-flex">
-                                    <h5 class="mb-1">
-                                        Tournament Games </h5>
-                                    <div class="img_box mr-0 ml-auto">
-                                        <img src="assets/images/game2.webp" class="img-fluid" alt="Tournament Games"
-                                            loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="text_box">
-                                    <p>Competitive games with tournaments and prizes</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <i class="zmdi zmdi-close-circle" style="font-size: 1.6rem;" id="cloesMenu"></i>
         </div>
-    </div>
-    <!-- Category menu end -->
+    </footer>
 
-    <script>
-        function onFrameLoad() {
-            console.log("hide");
-            if (document.getElementById("iframe_loader")) {
-                console.log("iframe-loader");
-                document.getElementById("iframe_loader").style.display = 'none';
-            }
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-            if (document.getElementById("iframe_mobile_loader")) {
-                console.log("iframe-loader");
-                document.getElementById("iframe_mobile_loader").style.display = 'none';
-            }
-        }
-
-        $(document).ready(function () {
-            $('.products-slider.owl-carousel').owlCarousel({
-                margin: 10,
-                items: 1,
-                dots: false,
-                autoWidth: false,
-                nav: true,
-                navText: ["<div class='nav-btn prev-slide'><i class='fas fa-chevron-left'></i></div>", "<div class='nav-btn next-slide'><i class='fas fa-chevron-right'></i></div>"],
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: true
-                    },
-                    600: {
-                        items: 3,
-                        autoWidth: true,
-                    },
-                    1000: {
-                        items: 3,
-                        nav: true,
-                        autoWidth: true,
-                    }
-                }
-            });
-
-            $(".darkTheme_lightThemeButton").click(function () {
-                $("body").toggleClass("dark_theme");
-            });
-
-            $("#startNow").click(function () {
-                $("#interactWithScreen").removeClass("active");
-            });
-
-            $("#startNowMobile").click(function () {
-                $("#interactWithScreenMobile").removeClass("active");
-            });
-
-            $("#openMenu").click(function () {
-                $("#categoryMenu").addClass("active");
-                $("body").addClass("no-scroll");
-            });
-
-            $("#cloesMenu").click(function () {
-                $("#categoryMenu").removeClass("active");
-                $("body").removeClass("no-scroll");
-            });
-
-            if (typeof butter !== 'undefined') {
-                butter.init({
-                    cancelOnTouch: true
-                });
-            }
-        });
-
-        new WOW().init();
-    </script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

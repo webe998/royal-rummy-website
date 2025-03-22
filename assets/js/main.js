@@ -292,6 +292,222 @@ document.addEventListener('DOMContentLoaded', function () {
     if (typeof WOW !== 'undefined') {
         new WOW().init();
     }
+
+    // Mobile Navigation Toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('show');
+        });
+    }
+
+    // Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    if (backToTopButton) {
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Game Filters
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const gameCards = document.querySelectorAll('.game-card');
+
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                // Show/hide game cards based on filter
+                gameCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.classList.contains(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    }
+
+    // FAQ Toggles
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    if (faqQuestions.length > 0) {
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function () {
+                // Toggle active class on question
+                this.classList.toggle('active');
+
+                // Toggle show class on answer
+                const answer = this.nextElementSibling;
+                answer.classList.toggle('show');
+
+                // Adjust max-height for animation
+                if (answer.classList.contains('show')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
+    }
+
+    // Form Validation
+    const contactForm = document.querySelector('.contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let valid = true;
+            const inputs = contactForm.querySelectorAll('.form-control');
+
+            inputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    valid = false;
+                    input.classList.add('error');
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+
+            if (valid) {
+                // Form submission success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'alert-success';
+                successMessage.textContent = 'Your message has been sent successfully!';
+                contactForm.appendChild(successMessage);
+
+                // Reset form
+                contactForm.reset();
+
+                // Remove success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 3000);
+            } else {
+                // Form submission error message
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'alert-error';
+                errorMessage.textContent = 'Please fill in all required fields.';
+                contactForm.appendChild(errorMessage);
+
+                // Remove error message after 3 seconds
+                setTimeout(() => {
+                    errorMessage.remove();
+                }, 3000);
+            }
+        });
+    }
+
+    // Animate on Scroll (if AOS library is included)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            offset: 150,
+            once: true
+        });
+    }
+
+    // Testimonial Slider (if a slider library is included)
+    if (typeof Swiper !== 'undefined') {
+        new Swiper('.testimonials-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            }
+        });
+    }
+
+    // Preloader (if used)
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        window.addEventListener('load', function () {
+            preloader.classList.add('hide');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+    }
+
+    // Theme Toggle (Light/Dark)
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        // Check for saved theme preference or set based on user preference
+        const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        // Apply saved theme
+        document.body.setAttribute('data-theme', savedTheme);
+
+        themeToggle.addEventListener('click', function () {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            // Update theme
+            document.body.setAttribute('data-theme', newTheme);
+
+            // Save preference
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+
+    // Smooth Scrolling for Internal Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+
+                if (navMenu && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            }
+        });
+    });
 });
 
 // 如果butter对象存在，初始化视差效果
