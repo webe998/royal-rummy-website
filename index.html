@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>DIGITAL DREAMS - 顶级卡牌游戏工作室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DIGITAL DREAMS - Card Game Studio</title>
     <meta name="description"
-        content="DIGITAL DREAMS是专业的卡牌游戏开发工作室，专注于创建高质量的拉米纸牌游戏。我们提供流畅的游戏体验、真人多人对战、多种游戏模式、游戏内聊天、虚拟货币集成等功能。体验我们的游戏，感受卡牌游戏的乐趣！">
-    <meta name="keywords" content="卡牌游戏, 赌场游戏, 游戏应用, 排行榜, 多人模式, 在线游戏, Rummy游戏应用, 虚拟筹码">
+        content="DIGITAL DREAMS is a professional card game development studio, focused on creating high-quality Rummy card games. We offer smooth gameplay experience, real-time multiplayer, multiple game modes, in-game chat, virtual currency integration, and more. Experience our games and feel the fun of card games!">
+    <meta name="keywords"
+        content="card games, casino game, gaming app, leaderboards, Multiplayer mode, online gaming, Rummy game app, Virtual chips">
     <link rel="shortcut icon" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -15,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -25,94 +26,200 @@
     <script src="assets/js/main.js" defer></script>
 </head>
 
-<body class="wow fadeIn" data-wow-duration="1s">
+<body class="wow fadeIn dark_theme" data-wow-duration="1s">
+    <div class="menuButton" id="openMenu">
+        <i class="zmdi zmdi-menu"></i>
+    </div>
+
     <div id="butter">
         <div class="body_ineer">
             <div class="row no-gutters">
                 <div class="col-12 col-lg-6 p-0">
-                    <!-- 横幅部分开始 -->
+                    <!-- Banner section start -->
                     <div class="banner">
                         <header class="px-2 pt-2">
-                            <nav class="navbar navbar-light">
-                                <div class="container-fluid">
-                                    <a class="navbar-brand" href="index.html">
+                            <nav class="navbar navbar-light px-sm-0 px-md-0 px-0 px-lg-4">
+                                <div
+                                    class="container-fluid py-3 col-sm-12 col-md-11 col-lg-10 d-flex d-lg-block d-xl-flex align-items-center">
+                                    <a class="navbar-brand d-block m-0 mx-auto ml-md-0" href="index.html">
                                         <h1>DIGITAL DREAMS</h1>
                                     </a>
                                 </div>
                             </nav>
                         </header>
 
-                        <div class="container-fluid">
+                        <div class="container-fluid col-sm-12 col-md-11 col-lg-11 col-xl-9 px-lg-4">
                             <div class="row align-items-center">
-                                <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <div class="banner_text">
+                                <div class="col-sm-12 col-md-12 col-lg-12 pb-4 pb-lg-0 px-0">
+                                    <div class="banner_text pt-0 pt-md-0 pt-lg-2">
                                         <h3 class="text-center text-lg-left wow fadeInUp pb-3" data-wow-duration=".1s">
                                             Royal Rummy</h3>
-                                        <h1 class="text-center text-lg-left wow fadeInUp pb-3" data-wow-duration=".3s">
-                                            顶级卡牌游戏工作室</h1>
-                                        <p class="text-center text-lg-left wow fadeInUp m-0" data-wow-duration=".5s">
-                                            欢迎体验最终极的在线卡牌游戏 – Royal
-                                            Rummy！使用这款易于上手的游戏，您可以迅速享受卡牌游戏的乐趣。我们提供流畅的游戏体验和简单的导航，让您尽情沉浸在游戏乐趣中。</p>
+                                        <h1 class="text-center text-lg-left wow fadeInUp pb-3 d-none d-lg-block"
+                                            data-wow-duration=".3s">
+                                            Card Game Studio</h1>
 
-                                        <div class="btn_box get_it_app2 w-100 wow fadeInUp mt-3"
+                                        <div
+                                            class="d-block d-lg-none pb-0 pb-lg-0 position-relative right_row_inner right_row_innerMovile mb-5">
+                                            <div class="interactWithScreen active" id="interactWithScreenMobile">
+                                                <div class="card">
+                                                    <h2>Interact with <br>screens</h2>
+                                                    <button class="btn primary_button" type="button"
+                                                        id="startNowMobile">
+                                                        Start Now
+                                                    </button>
+                                                    <img src="assets/images/hand.png" class="img-fluid">
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-content" id="nav-tab">
+                                                <button class="btn spinner_box" type="button" disabled
+                                                    id="iframe_mobile_loader">
+                                                    <span class="spinner-border spinner-border-sm" role="status"
+                                                        aria-hidden="true"></span>
+                                                    Please Wait
+                                                </button>
+                                                <div class="tab-pane fade show active" id="user-app_mobile"
+                                                    role="tabpanel" aria-labelledby="user-app_tab">
+                                                    <iframe id="frame-0" src="about:blank" allowTransparency="true"
+                                                        frameborder="0" width="100%" height="100%"
+                                                        onload="onFrameLoad()">
+                                                    </iframe>
+                                                </div>
+                                            </div>
+
+                                            <div class="right_row_header px-sm-0 px-md-0 px-lg-0 px-0 pb-5 pt-2">
+                                                <div class="row align-items-center position-relative mt-4">
+                                                    <h2 class="px-sm-0 text-center col-12 pb-3 mb-0">Experience Our
+                                                        Games</h2>
+                                                </div>
+                                                <div class="row align-items-center no-gutters wow fadeInUp"
+                                                    data-wow-duration="0.8s">
+                                                    <div class="col-12 col-sm-10 col-md-10 col-lg-12 col-xl-12 mx-auto">
+                                                        <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
+                                                            <div class="products-slider owl-carousel owl-theme">
+                                                                <div class="item">
+                                                                    <a class="border-0 nav-item nav-link col active"
+                                                                        id="classic-rummy-tab" data-toggle="tab"
+                                                                        href="#classic-rummy_mobile" role="tab"
+                                                                        aria-controls="classic-rummy"
+                                                                        aria-selected="true">
+                                                                        <span>Classic Rummy</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="item">
+                                                                    <a class="border-0 nav-item nav-link col"
+                                                                        id="royal-tournaments-tab" data-toggle="tab"
+                                                                        href="#royal-tournaments_mobile" role="tab"
+                                                                        aria-controls="royal-tournaments"
+                                                                        aria-selected="false">
+                                                                        <span>Royal Tournaments</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="item">
+                                                                    <a class="border-0 nav-item nav-link col"
+                                                                        id="rummy-fusion-tab" data-toggle="tab"
+                                                                        href="#rummy-fusion_mobile" role="tab"
+                                                                        aria-controls="rummy-fusion"
+                                                                        aria-selected="false">
+                                                                        <span>Rummy Fusion</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h1 class="text-center text-lg-left wow fadeInUp pb-3 d-block d-lg-none"
+                                            data-wow-duration=".3s">
+                                            Card Game Studio</h1>
+
+                                        <p class="text-center text-lg-left wow fadeInUp m-0" data-wow-duration=".5s">
+                                            Welcome to the ultimate online card gaming experience – Royal Rummy! With
+                                            this easy-to-use gaming app, you can quickly enjoy the excitement of card
+                                            games. We offer a seamless gaming experience with smooth UI/UX and easy
+                                            navigation.
+                                        </p>
+
+                                        <div class="btn_box get_it_app2 w-100 wow fadeInUp mt-3 col-11 col-md-12 mx-auto"
                                             data-wow-duration=".5s">
                                             <div class="row no-gutters">
                                                 <div class="col-12 col-md-8 px-0">
                                                     <h4 class="text-center text-md-left pb-2 pb-md-0 pl-md-3">
-                                                        <strong>下载应用</strong> 到您的手机
+                                                        <strong>Download app</strong> on your phone
                                                     </h4>
                                                 </div>
                                                 <div class="col-12 col-md-4">
                                                     <a href="pages/games.html"
-                                                        class="btn btn-primary rounded d-flex align-items-center mx-auto ml-md-auto mr-md-0">
-                                                        <i class="fab fa-google-play"></i> 获取游戏
+                                                        class="btn primary_button rounded d-flex align-items-center mx-auto ml-md-auto mr-md-0"
+                                                        id="GooglePlay">
+                                                        <img src="assets/images/playstore.png" class="img-fluid" alt="">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="btn_box get_it_app2 w-100 wow fadeInUp" data-wow-duration=".5s">
+                                        <div class="btn_box get_it_app2 w-100 wow fadeInUp col-11 col-md-12 mx-auto"
+                                            data-wow-duration=".5s">
                                             <div class="row no-gutters">
                                                 <div class="col-12 col-md-8 px-0">
-                                                    <h4 class="text-center text-md-left pb-2 pb-md-0 pl-md-3">观看应用
-                                                        <strong>演示视频</strong>
+                                                    <h4 class="text-center text-md-left pb-2 pb-md-0 pl-md-3">Watch App
+                                                        <strong>Demo Video</strong>
                                                     </h4>
                                                 </div>
                                                 <div class="col-12 col-md-4">
                                                     <button type="button"
-                                                        class="btn btn-secondary rounded d-flex align-items-center mx-auto ml-md-auto mr-md-0">
-                                                        <i class="fab fa-youtube"></i> 观看视频
+                                                        class="btn primary_button youtube_btn rounded d-flex align-items-center mx-auto ml-md-auto mr-md-0">
+                                                        <img src="assets/images/Youtube.png" class="img-fluid" alt="">
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="get_admin_backend pt-5">
-                                            <h2>需要了解更多信息？</h2>
-                                            <h4>请随时联系我们...</h4>
+                                            <h2>Need More Information?</h2>
+                                            <h4>Feel free to contact us...</h4>
                                             <div class="row align-items-center pt-2 pb-3 no-gutters">
-                                                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                                                <div class="col-12 col-md-12 col-lg-12 col-xl-9">
                                                     <div class="row align-items-center">
-                                                        <div class="col-12 col-md-6 pb-2">
+                                                        <div class="col-12 col-md-7 pb-2">
                                                             <a href="pages/contact.html"
-                                                                class="btn btn-primary d-flex align-items-center WhatsAppBtn">
-                                                                <i class="fas fa-comment"></i> 联系我们
+                                                                class="btn d-flex align-items-center WhatsAppBtn"
+                                                                style="height: 55px;">
+                                                                <span class="d-flex align-items-center mx-auto"
+                                                                    style="font-size: .9rem;">
+                                                                    <i class="fas fa-comment"></i> Contact Us
+                                                                </span>
                                                             </a>
                                                         </div>
-                                                        <div class="col-12 col-md-6 pb-2">
+                                                        <div class="col-12 col-md-5 pb-2">
                                                             <a href="mailto:info@digitaldreams.com"
-                                                                class="btn btn-secondary d-flex align-items-center messageUs">
-                                                                <i class="fas fa-envelope"></i> 发送邮件
+                                                                class="btn d-flex align-items-center messageUs"
+                                                                style="height: 55px;">
+                                                                <span class="d-flex align-items-center mx-auto"
+                                                                    style="font-size: .9rem;">
+                                                                    <i class="fas fa-envelope"></i> Email Us
+                                                                </span>
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-md-12 pt-3 d-flex">
-                                                    <div class="social-icons d-flex mx-auto">
-                                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                                        <a href="#"><i class="fab fa-discord"></i></a>
+                                                <div class="col-12 col-md-12 col-lg-3 col-xl-3 pt-3 pt-xl-0 d-flex">
+                                                    <div
+                                                        class="social-icons d-flex mx-auto ml-md-auto mr-md-0 pt-3 pt-md-0">
+                                                        <a href="#" class="d-block" target="_blank">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </a>
+                                                        <a href="#" class="d-block" target="_blank">
+                                                            <i class="fab fa-twitter"></i>
+                                                        </a>
+                                                        <a href="#" class="d-block" target="_blank">
+                                                            <i class="fab fa-instagram"></i>
+                                                        </a>
+                                                        <a href="#" class="d-block" target="_blank">
+                                                            <i class="fab fa-discord"></i>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -122,54 +229,59 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 横幅部分结束 -->
+                    <!-- Banner section end -->
                 </div>
 
                 <div class="col-12 col-lg-6 p-0 pt-4 d-none d-lg-block right_row_container">
-                    <!-- 应用部分开始 -->
+                    <!-- App section start -->
                     <div class="right_row px-2 pt-4 wow fadeInUp m-0" data-wow-duration=".5s">
                         <div class="right_row_inner pt-3">
                             <div class="interactWithScreen active" id="interactWithScreen">
                                 <div class="card">
-                                    <h2>与屏幕<br>互动</h2>
-                                    <button class="btn btn-primary" type="button" id="startNow">
-                                        立即开始
+                                    <h2>Interact with <br>screens</h2>
+                                    <button class="btn primary_button" type="button" id="startNow">
+                                        Start Now
                                     </button>
                                     <img src="assets/images/hand.png" class="img-fluid">
                                 </div>
                             </div>
 
                             <div class="tabContentBg">
-                                <img src="assets/images/phone_bg.jpg" alt="手机背景">
+                                <img src="assets/images/phone_bg.jpg">
                             </div>
-
-                            <div class="right_row_header px-0 pb-5 pt-2">
+                            <div class="right_row_header px-sm-0 px-md-0 px-lg-0 px-0 pb-5 pt-2">
                                 <div class="row align-items-center position-relative mt-4">
-                                    <h2 class="px-0 text-center col-12 pb-3 mb-0">包含多款游戏</h2>
+                                    <div class="ThemeButtonBox col-12 pb-3 pb-md-0">
+                                        <div class="darkTheme_lightThemeButton d-flex mx-auto" id="darkTheme">
+                                            <i class="zmdi zmdi-sun"></i>
+                                            <i class="zmdi zmdi-brightness-3"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="px-sm-0 text-center col-12 pb-3 mb-0">Experience Our Games</h2>
                                 </div>
                                 <div class="row align-items-center no-gutters wow fadeInUp" data-wow-duration="0.8s">
-                                    <div class="col-12 mx-auto">
+                                    <div class="col-12 col-sm-10 col-md-10 col-lg-12 col-xl-12 mx-auto">
                                         <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
                                             <div class="products-slider owl-carousel owl-theme">
                                                 <div class="item">
                                                     <a class="border-0 nav-item nav-link col active"
                                                         id="classic-rummy-tab" data-toggle="tab" href="#classic-rummy"
                                                         role="tab" aria-controls="classic-rummy" aria-selected="true">
-                                                        <span>经典拉米</span>
+                                                        <span>Classic Rummy</span>
                                                     </a>
                                                 </div>
                                                 <div class="item">
                                                     <a class="border-0 nav-item nav-link col" id="royal-tournaments-tab"
                                                         data-toggle="tab" href="#royal-tournaments" role="tab"
                                                         aria-controls="royal-tournaments" aria-selected="false">
-                                                        <span>皇家比赛</span>
+                                                        <span>Royal Tournaments</span>
                                                     </a>
                                                 </div>
                                                 <div class="item">
                                                     <a class="border-0 nav-item nav-link col" id="rummy-fusion-tab"
                                                         data-toggle="tab" href="#rummy-fusion" role="tab"
                                                         aria-controls="rummy-fusion" aria-selected="false">
-                                                        <span>混合拉米</span>
+                                                        <span>Rummy Fusion</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -178,42 +290,52 @@
                                 </div>
                             </div>
 
-                            <div class="tab-content position-relative" id="nav-tabContent">
+                            <div class="tab-content position-relative" id="nav-tab">
+                                <button class="btn spinner_box" type="button" disabled id="iframe_loader">
+                                    <span class="spinner-border spinner-border-sm" role="status"
+                                        aria-hidden="true"></span>
+                                    Please Wait
+                                </button>
+
                                 <div class="tab-pane fade show active" id="classic-rummy" role="tabpanel"
                                     aria-labelledby="classic-rummy-tab">
-                                    <iframe src="about:blank" allowTransparency="true" frameborder="0" width="100%"
-                                        height="100%"></iframe>
+                                    <iframe id="frame-1" src="about:blank" allowTransparency="true" frameborder="0"
+                                        width="100%" height="100%">
+                                    </iframe>
                                 </div>
                                 <div class="tab-pane fade" id="royal-tournaments" role="tabpanel"
                                     aria-labelledby="royal-tournaments-tab">
-                                    <iframe src="about:blank" allowTransparency="true" frameborder="0" width="100%"
-                                        height="100%"></iframe>
+                                    <iframe id="frame-2" src="about:blank" allowTransparency="true" frameborder="0"
+                                        width="100%" height="100%">
+                                    </iframe>
                                 </div>
                                 <div class="tab-pane fade" id="rummy-fusion" role="tabpanel"
                                     aria-labelledby="rummy-fusion-tab">
-                                    <iframe src="about:blank" allowTransparency="true" frameborder="0" width="100%"
-                                        height="100%"></iframe>
+                                    <iframe id="frame-3" src="about:blank" allowTransparency="true" frameborder="0"
+                                        width="100%" height="100%">
+                                    </iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- 应用部分结束 -->
+                    <!-- App section end -->
                 </div>
             </div>
         </div>
 
-        <!-- 特色部分开始 -->
+        <!-- Features section start -->
         <section id="features" class="features padding-top padding-bottom">
-            <div class="container-fluid">
-                <h2 class="similar_apps_heading pb-4">我们的特色</h2>
+            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 px-0 mx-auto px-lg-4">
+                <h2 class="similar_apps_heading pb-4">Why Choose DIGITAL DREAMS?</h2>
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i class="fas fa-trophy"></i>
                             </div>
-                            <h3>获奖游戏</h3>
-                            <p>我们的拉米游戏在设计和游戏玩法方面获得了多项行业奖项。</p>
+                            <h3>Award-Winning Games</h3>
+                            <p>Our Rummy games have received multiple industry awards for excellence in design and
+                                gameplay.</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3">
@@ -221,8 +343,8 @@
                             <div class="feature-icon">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <h3>全球社区</h3>
-                            <p>加入全球数百万玩家，体验既竞争又友好的游戏体验。</p>
+                            <h3>Global Community</h3>
+                            <p>Join millions of players worldwide and experience competitive yet friendly gameplay.</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3">
@@ -230,8 +352,9 @@
                             <div class="feature-icon">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h3>多平台</h3>
-                            <p>在任何设备上玩 - 我们的游戏适用于手机、平板和桌面平台。</p>
+                            <h3>Multi-Platform</h3>
+                            <p>Play on any device - our games are available on mobile, tablet, and desktop platforms.
+                            </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3">
@@ -239,34 +362,34 @@
                             <div class="feature-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h3>安全游戏</h3>
-                            <p>我们优先考虑您的安全，采用行业领先的加密和公平游戏系统。</p>
+                            <h3>Secure Gaming</h3>
+                            <p>We prioritize your security with industry-leading encryption and fair play systems.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- 特色部分结束 -->
+        <!-- Features section end -->
 
-        <!-- 类似应用部分开始 -->
-        <section id="games" class="games products similar_apps padding-bottom">
-            <div class="container-fluid">
-                <h2 class="similar_apps_heading pb-4">我们的热门游戏</h2>
+        <!-- Games section start -->
+        <section id="games" class="products similar_apps padding-bottom">
+            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 px-0 mx-auto px-lg-4">
+                <h2 class="similar_apps_heading pb-4">Our Popular Games</h2>
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-4">
                         <div class="card border-0" style="background: #3498db">
                             <a class="d-flex w-100" href="pages/games.html">
                                 <div class="text-box">
-                                    <h2>经典拉米</h2>
-                                    <h3>传统拉米体验，现代图形和流畅游戏玩法</h3>
+                                    <h2>Classic Rummy</h2>
+                                    <h3>The traditional Rummy experience with modern graphics and smooth gameplay.</h3>
                                     <div class="icon_box">
                                         <i class="fab fa-android"></i>
                                         <i class="fab fa-apple"></i>
                                     </div>
                                 </div>
                                 <div class="img_box">
-                                    <img src="assets/images/game1.webp" alt="经典拉米" class="img-fluid wow slideInUp"
-                                        data-wow-duration=".5s">
+                                    <img src="assets/images/game1.webp" alt="Classic Rummy"
+                                        class="img-fluid wow slideInUp" data-wow-duration=".5s">
                                 </div>
                             </a>
                         </div>
@@ -275,16 +398,16 @@
                         <div class="card border-0" style="background: #e74c3c">
                             <a class="d-flex w-100" href="pages/games.html">
                                 <div class="text-box">
-                                    <h2>皇家比赛</h2>
-                                    <h3>参加每日和每周比赛，与来自世界各地的玩家竞争</h3>
+                                    <h2>Royal Tournaments</h2>
+                                    <h3>Compete in daily and weekly tournaments with players from around the world.</h3>
                                     <div class="icon_box">
                                         <i class="fab fa-android"></i>
                                         <i class="fab fa-apple"></i>
                                     </div>
                                 </div>
                                 <div class="img_box">
-                                    <img src="assets/images/game2.webp" alt="皇家比赛" class="img-fluid wow slideInUp"
-                                        data-wow-duration=".5s">
+                                    <img src="assets/images/game2.webp" alt="Royal Tournaments"
+                                        class="img-fluid wow slideInUp" data-wow-duration=".5s">
                                 </div>
                             </a>
                         </div>
@@ -293,16 +416,17 @@
                         <div class="card border-0" style="background: #2ecc71">
                             <a class="d-flex w-100" href="pages/games.html">
                                 <div class="text-box">
-                                    <h2>混合拉米</h2>
-                                    <h3>经典拉米与令人兴奋的新机制和特殊卡片的独特融合</h3>
+                                    <h2>Rummy Fusion</h2>
+                                    <h3>A unique blend of classic Rummy with exciting new mechanics and special cards.
+                                    </h3>
                                     <div class="icon_box">
                                         <i class="fab fa-android"></i>
                                         <i class="fab fa-apple"></i>
                                     </div>
                                 </div>
                                 <div class="img_box">
-                                    <img src="assets/images/game3.webp" alt="混合拉米" class="img-fluid wow slideInUp"
-                                        data-wow-duration=".5s">
+                                    <img src="assets/images/game3.webp" alt="Rummy Fusion"
+                                        class="img-fluid wow slideInUp" data-wow-duration=".5s">
                                 </div>
                             </a>
                         </div>
@@ -310,36 +434,101 @@
                 </div>
             </div>
         </section>
-        <!-- 类似应用部分结束 -->
+        <!-- Games section end -->
 
-        <!-- 订阅部分开始 -->
+        <!-- Testimonials section start -->
+        <section id="testimonials" class="padding-top padding-bottom"
+            style="background-color: var(--secondary-color); color: white;">
+            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 px-0 mx-auto px-lg-4">
+                <h2 class="similar_apps_heading pb-4" style="color: white;">What Our Players Say</h2>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"DIGITAL DREAMS offers the best online card game experience I've ever had. The
+                                    attention to detail is impressive!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="assets/images/avatar1.webp" alt="Player Avatar">
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Playing since 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"The tournaments are competitive yet fair, and the community is friendly. I've made
+                                    real friends through DIGITAL DREAMS!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="assets/images/avatar2.webp" alt="Player Avatar">
+                                <div class="author-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Tournament Champion 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials section end -->
+
+        <!-- Newsletter section start -->
         <section id="newsletter" class="newsletter-section padding-top padding-bottom">
-            <div class="container-fluid">
-                <h2>加入我们的游戏社区</h2>
-                <p>订阅我们的通讯以获取有关新游戏发布、独家优惠和游戏技巧的更新。</p>
+            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 px-0 mx-auto px-lg-4">
+                <h2>Join Our Gaming Community</h2>
+                <p>Subscribe to our newsletter to receive updates on new game releases, exclusive offers, and gaming
+                    tips.</p>
                 <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="您的电子邮件地址" required>
-                    <button type="submit" class="newsletter-btn">订阅</button>
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>
         </section>
-        <!-- 订阅部分结束 -->
+        <!-- Newsletter section end -->
 
-        <!-- 页脚部分开始 -->
-        <footer class="padding-top position-relative">
-            <div class="container-fluid padding-bottom">
+        <!-- Footer section start -->
+        <footer class="padding-top position-relative px-lg-4">
+            <div class="container-fluid col-sm-12 col-md-11 col-lg-11 padding-bottom">
                 <div class="row align-items-start">
                     <div class="col-sm-12 col-md-12 col-lg-6">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand d-block m-0" href="index.html">
                             <h2>DIGITAL DREAMS</h2>
                         </a>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 col-lg-6">
-                        <div class="contacts">
+                    <div class="col-sm-12 col-md-12 col-lg-6 pr-lg-5">
+                        <div class="contacts col-sm-12 col-md-12 col-lg-12 col-xl-8 px-0 ml-auto">
+                            <div class="box d-flex align-items-center w-100 pt-2">
+                                <h2>Follow</h2>
+                                <div class="icon_box d-flex ml-auto">
+                                    <a href="#" class="d-block" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="d-block" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="d-block" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="d-block" target="_blank">
+                                        <i class="fab fa-discord"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="box d-flex align-items-center w-100">
+                                <h2>Contact</h2>
+                                <h3 class="ml-auto">info@digitaldreams.com</h3>
+                            </div>
+
                             <div class="footer-content">
                                 <div class="footer-logo">
-                                    <p>顶级卡牌游戏工作室</p>
+                                    <p>The Premier Card Game Studio</p>
                                     <div class="company-info">
                                         <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Plaza, Suite 500</p>
                                         <p>San Francisco, CA 94105, USA</p>
@@ -349,32 +538,30 @@
                                 </div>
                                 <div class="footer-links">
                                     <div class="footer-column">
-                                        <h3>快速链接</h3>
+                                        <h3>Quick Links</h3>
                                         <ul>
-                                            <li><a href="index.html">首页</a></li>
-                                            <li><a href="pages/games.html">游戏</a></li>
-                                            <li><a href="pages/about.html">关于我们</a></li>
-                                            <li><a href="pages/contact.html">联系</a></li>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="pages/games.html">Games</a></li>
+                                            <li><a href="pages/about.html">About Us</a></li>
+                                            <li><a href="pages/contact.html">Contact</a></li>
                                         </ul>
                                     </div>
                                     <div class="footer-column">
-                                        <h3>法律条款</h3>
+                                        <h3>Legal</h3>
                                         <ul>
-                                            <li><a href="pages/privacy-policy.html">隐私政策</a></li>
-                                            <li><a href="pages/terms-of-service.html">服务条款</a></li>
-                                            <li><a href="pages/refund-policy.html">退款政策</a></li>
-                                            <li><a href="pages/cookie-policy.html">Cookie政策</a></li>
+                                            <li><a href="pages/privacy-policy.html">Privacy Policy</a></li>
+                                            <li><a href="pages/terms-of-service.html">Terms of Service</a></li>
+                                            <li><a href="pages/refund-policy.html">Refund Policy</a></li>
+                                            <li><a href="pages/cookie-policy.html">Cookie Policy</a></li>
                                         </ul>
                                     </div>
-                                    <div class="footer-column">
-                                        <h3>关注我们</h3>
-                                        <div class="social-icons">
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                            <a href="#"><i class="fab fa-discord"></i></a>
-                                        </div>
-                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box d-flex align-items-center w-100">
+                                <div class="darkTheme_lightThemeButton d-flex ml-auto mr-0">
+                                    <i class="zmdi zmdi-sun"></i>
+                                    <i class="zmdi zmdi-brightness-3"></i>
                                 </div>
                             </div>
                         </div>
@@ -382,14 +569,101 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 DIGITAL DREAMS. 保留所有权利。</p>
+                <p>&copy; 2024 DIGITAL DREAMS. All rights reserved.</p>
             </div>
         </footer>
-        <!-- 页脚部分结束 -->
+        <!-- Footer section end -->
     </div>
 
+    <!-- Category menu Start -->
+    <div class="categoryMenu" id="categoryMenu">
+        <div class="d-flex">
+            <h2 class="header_text">Game Categories</h2>
+            <div class="w-100" style="padding-top: 40px;">
+                <div class="list-group d-block col-12 col-md-12 col-xl-12 mx-auto px-0">
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <a href="pages/games.html" class="list-group-item list-group-item-action">
+                                <div class="item-header d-flex">
+                                    <h5 class="mb-1">
+                                        Card Games </h5>
+                                    <div class="img_box mr-0 ml-auto">
+                                        <img src="assets/images/game1.webp" class="img-fluid" alt="Card Games"
+                                            loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="text_box">
+                                    <p>Traditional and modern card games with exciting twists</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <a href="pages/games.html" class="list-group-item list-group-item-action">
+                                <div class="item-header d-flex">
+                                    <h5 class="mb-1">
+                                        Strategy Games </h5>
+                                    <div class="img_box mr-0 ml-auto">
+                                        <img src="assets/images/game2.webp" class="img-fluid" alt="Strategy Games"
+                                            loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="text_box">
+                                    <p>Strategic games that challenge your mind and planning skills</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <a href="pages/games.html" class="list-group-item list-group-item-action">
+                                <div class="item-header d-flex">
+                                    <h5 class="mb-1">
+                                        Family Games </h5>
+                                    <div class="img_box mr-0 ml-auto">
+                                        <img src="assets/images/game3.webp" class="img-fluid" alt="Family Games"
+                                            loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="text_box">
+                                    <p>Fun games for the whole family to enjoy together</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <a href="pages/games.html" class="list-group-item list-group-item-action">
+                                <div class="item-header d-flex">
+                                    <h5 class="mb-1">
+                                        Tournament Games </h5>
+                                    <div class="img_box mr-0 ml-auto">
+                                        <img src="assets/images/game2.webp" class="img-fluid" alt="Tournament Games"
+                                            loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="text_box">
+                                    <p>Competitive games with tournaments and prizes</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <i class="zmdi zmdi-close-circle" style="font-size: 1.6rem;" id="cloesMenu"></i>
+        </div>
+    </div>
+    <!-- Category menu end -->
+
     <script>
-        new WOW().init();
+        function onFrameLoad() {
+            console.log("hide");
+            if (document.getElementById("iframe_loader")) {
+                console.log("iframe-loader");
+                document.getElementById("iframe_loader").style.display = 'none';
+            }
+
+            if (document.getElementById("iframe_mobile_loader")) {
+                console.log("iframe-loader");
+                document.getElementById("iframe_mobile_loader").style.display = 'none';
+            }
+        }
 
         $(document).ready(function () {
             $('.products-slider.owl-carousel').owlCarousel({
@@ -417,10 +691,36 @@
                 }
             });
 
+            $(".darkTheme_lightThemeButton").click(function () {
+                $("body").toggleClass("dark_theme");
+            });
+
             $("#startNow").click(function () {
                 $("#interactWithScreen").removeClass("active");
             });
+
+            $("#startNowMobile").click(function () {
+                $("#interactWithScreenMobile").removeClass("active");
+            });
+
+            $("#openMenu").click(function () {
+                $("#categoryMenu").addClass("active");
+                $("body").addClass("no-scroll");
+            });
+
+            $("#cloesMenu").click(function () {
+                $("#categoryMenu").removeClass("active");
+                $("body").removeClass("no-scroll");
+            });
+
+            if (typeof butter !== 'undefined') {
+                butter.init({
+                    cancelOnTouch: true
+                });
+            }
         });
+
+        new WOW().init();
     </script>
 </body>
 
