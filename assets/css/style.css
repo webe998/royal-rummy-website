@@ -61,6 +61,8 @@ header {
     padding: 1rem 0;
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     z-index: 1000;
     box-shadow: var(--shadow);
 }
@@ -117,6 +119,20 @@ header {
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
     width: 100%;
+}
+
+.user-profile {
+    margin-left: 1.5rem;
+}
+
+.profile-icon {
+    font-size: 1.8rem;
+    color: var(--light-text);
+    transition: var(--transition);
+}
+
+.profile-icon:hover {
+    color: var(--accent-color);
 }
 
 .mobile-toggle {
@@ -974,4 +990,26 @@ textarea.form-control {
     .section-title {
         font-size: 1.8rem;
     }
+}
+
+/* 为内页的导航栏添加用户头像样式 */
+.nav-links .user-profile {
+    margin-left: 1.5rem;
+}
+
+.nav-links .profile-icon {
+    font-size: 1.8rem;
+    color: var(--light-text);
+    transition: var(--transition);
+}
+
+.nav-links .profile-icon:hover {
+    color: var(--accent-color);
+}
+
+/* 添加内页主体内容的顶部边距 */
+.about-hero,
+.contact-hero,
+.policy-hero {
+    margin-top: 80px;
 }
