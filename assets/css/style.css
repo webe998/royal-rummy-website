@@ -128,96 +128,19 @@ header {
 
 /* === Hero Section === */
 .hero {
-    background: linear-gradient(to right, rgba(29, 53, 87, 0.9), rgba(29, 53, 87, 0.7)), url('../images/hero-bg.jpg');
+    background: url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    color: var(--light-text);
+    height: 70vh;
     position: relative;
     overflow: hidden;
+    margin-top: 70px;
+    /* 为固定的header留出空间 */
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/card-pattern.png');
-    background-size: 200px;
-    opacity: 0.05;
-    z-index: 1;
-}
+/* 移除了之前的.hero::before内容，不再需要卡牌图案纹理 */
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    padding: 0 1rem;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--accent-color);
-}
-
-.hero-text {
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: var(--transition);
-    border: 2px solid var(--primary-color);
-}
-
-.btn:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-secondary:hover {
-    background-color: white;
-    color: var(--secondary-color);
-}
+/* 移除了.hero-content相关样式，因为不再需要显示文字内容 */
 
 /* === Featured Games Section === */
 .section {
@@ -992,10 +915,6 @@ textarea.form-control {
 
 /* Responsive styles */
 @media (max-width: 992px) {
-    .hero-title {
-        font-size: 2.8rem;
-    }
-
     .featured-content {
         grid-template-columns: 1fr;
     }
@@ -1033,10 +952,6 @@ textarea.form-control {
         width: 100%;
     }
 
-    .hero-title {
-        font-size: 2.3rem;
-    }
-
     .section-title {
         font-size: 2rem;
     }
@@ -1052,14 +967,6 @@ textarea.form-control {
 }
 
 @media (max-width: 576px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
     .section {
         padding: 4rem 0;
     }
