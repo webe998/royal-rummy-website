@@ -131,7 +131,7 @@ header {
     background: url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    height: 70vh;
+    height: 60vh;
     position: relative;
     overflow: hidden;
     margin-top: 70px;
@@ -198,7 +198,7 @@ header {
 }
 
 .game-image {
-    height: 200px;
+    height: 220px;
     overflow: hidden;
 }
 
