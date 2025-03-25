@@ -56,27 +56,25 @@ img {
 }
 
 /* === Header === */
-header {
-    background-color: var(--secondary-color);
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: var(--shadow);
-}
-
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    font-size: 1.8rem;
-    color: var(--light-text);
+    font-size: 2rem;
     font-weight: 700;
+    color: var(--light-text);
 }
 
 .logo span {
@@ -85,54 +83,34 @@ header {
 
 .nav-menu {
     display: flex;
-    align-items: center;
-}
-
-.nav-menu li {
-    margin-left: 2rem;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu a {
     color: var(--light-text);
-    font-weight: 500;
+    text-decoration: none;
     font-size: 1.1rem;
-    padding: 0.5rem;
-    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: var(--transition);
+.nav-menu a:hover {
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.nav-menu a:hover,
 .nav-menu a.active {
     color: var(--accent-color);
-}
-
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-}
-
-.user-profile {
-    margin-left: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .profile-icon {
-    font-size: 1.8rem;
-    color: var(--light-text);
-    transition: var(--transition);
-}
-
-.profile-icon:hover {
-    color: var(--accent-color);
+    font-size: 1.5rem;
 }
 
 .mobile-toggle {
@@ -183,6 +161,18 @@ header {
     z-index: 2;
     max-width: 800px;
     padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
 }
 
 /* Glitch Effect */
@@ -301,11 +291,9 @@ header {
 }
 
 .section-title {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-text);
 }
 
 .section-title::after {
@@ -321,9 +309,11 @@ header {
 }
 
 .section-text {
-    max-width: 700px;
-    margin: 0 auto;
-    color: var(--gray-color);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
 }
 
 .games-grid {
@@ -366,14 +356,13 @@ header {
 }
 
 .game-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--secondary-color);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
 }
 
 .game-text {
-    color: var(--gray-color);
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .game-meta {
@@ -443,13 +432,13 @@ header {
 }
 
 .feature-title {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
 }
 
 .feature-text {
-    color: var(--gray-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 /* === Testimonials Section === */
@@ -476,9 +465,8 @@ header {
 }
 
 .testimonial-content {
-    margin-bottom: 1.5rem;
-    position: relative;
-    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 .testimonial-content::before {
@@ -506,13 +494,11 @@ header {
 }
 
 .author-name {
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .author-title {
-    opacity: 0.8;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 /* === Call to Action Section === */
@@ -523,14 +509,13 @@ header {
 }
 
 .cta-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
 }
 
 .cta-text {
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    opacity: 0.9;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
 }
 
 /* === Footer === */
@@ -547,11 +532,8 @@ footer {
 }
 
 .footer-column h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    color: var(--accent-color);
-    position: relative;
-    padding-bottom: 10px;
 }
 
 .footer-column h3::after {
@@ -564,20 +546,17 @@ footer {
     background-color: var(--primary-color);
 }
 
+.footer-column p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 .footer-links li {
     margin-bottom: 1rem;
 }
 
 .footer-links a {
-    opacity: 0.8;
-    display: inline-block;
-    transition: var(--transition);
-}
-
-.footer-links a:hover {
-    opacity: 1;
-    transform: translateX(5px);
-    color: var(--accent-color);
+    font-size: 1.1rem;
 }
 
 .footer-social {
@@ -1077,31 +1056,36 @@ textarea.form-control {
         display: block;
     }
 
+    .header-container {
+        padding: 1rem 0;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
     .nav-menu {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        background-color: var(--secondary-color);
-        width: 80%;
-        height: calc(100vh - 70px);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 2rem;
-        z-index: 999;
-        transition: var(--transition);
+        gap: 1.5rem;
     }
 
-    .nav-menu.show {
-        right: 0;
+    .nav-menu a {
+        font-size: 1rem;
     }
 
-    .nav-menu li {
-        margin: 0 0 1.5rem 0;
-        width: 100%;
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.4rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .section-text {
+        font-size: 1.1rem;
     }
 
     .cta-buttons {
@@ -1132,11 +1116,32 @@ textarea.form-control {
         height: 50vh;
     }
 
-    .glitch {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
         font-size: 2rem;
     }
 
-    .typing-text {
+    .section-text {
         font-size: 1rem;
     }
 }
